@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Widget/Section_Button.dart';
+
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
@@ -8,9 +10,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final Color colorFonts = const Color(0XFF464698);
-  final Color backGround = const Color(0XFF464698);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,11 +17,11 @@ class _MainScreenState extends State<MainScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'الرئيسية',
           style: TextStyle(
             fontFamily: 'Helvetica',
-            color: colorFonts,
+            color: Color(0XFF464698),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -46,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       body: GridView(
-        padding: const EdgeInsetsDirectional.only(start: 37, end: 37),
+        padding: const EdgeInsetsDirectional.only(start: 37, end: 37, top: 20),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 16,
@@ -54,38 +53,47 @@ class _MainScreenState extends State<MainScreen> {
           childAspectRatio: 135 / 126,
         ),
         children: [
-          Container(
-            color: Colors.blue,
+          SectionButton(
+            pathImage: 'images/السجاد والمفارش.png',
+            nameSection: 'قسم السجاد والمفارش',
+            function: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Column(
-              children: [
-                Image.asset(''),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'قسم الأثاث',
-                  style: TextStyle(
-                    color: colorFonts,
-                    fontSize: 11,
-                    fontFamily: 'Helvetica',
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: const Color(0XFFF1F1F9),
-            ),
+          SectionButton(
+            pathImage: 'images/الأثاث.png',
+            nameSection: 'قسم الأثاث',
+            function: () {},
           ),
-          Container(
-            color: Colors.red,
+          SectionButton(
+            pathImage: 'images/أجهزة الحاسوب.png',
+            nameSection: 'قسم أجهزة الحاسوب',
+            function: () {},
           ),
-          Container(
-            color: Colors.green,
+          SectionButton(
+            pathImage: 'images/أجهزة الجوال.png',
+            nameSection: 'قسم أجهزة الجوال',
+            function: () {},
           ),
+          SectionButton(
+            pathImage: 'images/الدراجات الهوائية.png',
+            nameSection: 'قسم الدراجات الهوائية',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/الدراجات النارية.png',
+            nameSection: 'قسم الدراجات النارية',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/الأجهزة الكهربائية.png',
+            nameSection: 'قسم الأجهزة الكهربائية',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/السيارات.png',
+            nameSection: 'قسم السيارات',
+            function: () {},
+          ),
+
         ],
       ),
     );
