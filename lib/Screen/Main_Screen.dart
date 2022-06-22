@@ -8,6 +8,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final Color colorFonts = const Color(0XFF464698);
+  final Color backGround = const Color(0XFF464698);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,13 +18,14 @@ class _MainScreenState extends State<MainScreen> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'الرئيسية',
           style: TextStyle(
-              fontFamily: 'Helvetica',
-              color: Color(0XFF464698),
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
+            fontFamily: 'Helvetica',
+            color: colorFonts,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           Padding(
@@ -42,15 +46,45 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       body: GridView(
+        padding: const EdgeInsetsDirectional.only(start: 37, end: 37),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
           childAspectRatio: 135 / 126,
         ),
         children: [
           Container(
-            height: 126,
-            width: 135,
             color: Colors.blue,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Column(
+              children: [
+                Image.asset(''),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'قسم الأثاث',
+                  style: TextStyle(
+                    color: colorFonts,
+                    fontSize: 11,
+                    fontFamily: 'Helvetica',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: const Color(0XFFF1F1F9),
+            ),
+          ),
+          Container(
+            color: Colors.red,
+          ),
+          Container(
+            color: Colors.green,
           ),
         ],
       ),
