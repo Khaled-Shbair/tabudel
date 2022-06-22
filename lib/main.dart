@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +28,7 @@ class _MyHomeState extends State<MyHome> {
     Icons.person,
     Icons.volunteer_activism_sharp,
     Icons.notifications_active,
-    Icons.home,
+    Icons.house,
   ];
 
   @override
@@ -55,9 +54,9 @@ class _MyHomeState extends State<MyHome> {
               for (int x = 0; x < data.length; x++) ...<Expanded>{
                 Expanded(
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
-                        selectedIndex=x;
+                        selectedIndex = x;
                       });
                     },
                     child: Center(
@@ -65,6 +64,15 @@ class _MyHomeState extends State<MyHome> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(data[x], color: Colors.white),
+                          if (x == selectedIndex) Container(
+                            margin: const EdgeInsetsDirectional.only(top: 5),
+                            height: 3,
+                            width: 5,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
                         ],
                       ),
                     ),
