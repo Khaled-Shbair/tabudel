@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'Screen/Main_Screen.dart';
+import 'Screen/Service_Provider_Registration_Screen.dart';
+import 'models/BnItem.dart';
+
 class AllPages extends StatefulWidget {
   const AllPages({Key? key}) : super(key: key);
 
@@ -14,6 +18,12 @@ class _AllPagesState extends State<AllPages> {
     Icons.volunteer_activism_sharp,
     Icons.notifications_active,
     Icons.house,
+  ];
+  final List<BnItem> bnItem = [
+    BnItem(widget: const MainScreen()),
+    BnItem(widget: const ServiceProviderRegistrationScreen()),
+    BnItem(widget: const MainScreen()),
+    BnItem(widget: const MainScreen()),
   ];
 
   @override
@@ -69,6 +79,7 @@ class _AllPagesState extends State<AllPages> {
           ),
         ),
       ),
+      body: bnItem[selectedIndex].widget,
     );
   }
 }

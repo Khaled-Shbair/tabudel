@@ -13,6 +13,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0XFFFFFFFF),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -23,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
             fontFamily: 'Helvetica',
             color: Color(0XFF464698),
             fontSize: 20,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w700,
           ),
         ),
         actions: [
@@ -93,7 +94,6 @@ class _MainScreenState extends State<MainScreen> {
             nameSection: 'قسم السيارات',
             function: () {},
           ),
-
         ],
       ),
     );

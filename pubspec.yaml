@@ -76,7 +76,9 @@ flutter:
     - family: Helvetica
       fonts:
         - asset: fonts/HelveticaNeueLT-Arabic-75-Bold.ttf
+          weight: 700
         - asset: fonts/HelveticaNeue LT 55 Roman Bold.ttf
+          weight: 500
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
