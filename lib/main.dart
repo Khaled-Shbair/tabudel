@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/AllPages',
+
       routes: {
         '/AllPages': (context) => const AllPages(),
         '/MainScreen': (context) => const MainScreen(),
