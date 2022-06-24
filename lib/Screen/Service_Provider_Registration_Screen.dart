@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Widget/Buttons.dart';
+import '../Widget/Circle_Button.dart';
 import '../Widget/Menu_Choose.dart';
 import '../Widget/Text_Field_Profile.dart';
 import '../models/City.dart';
@@ -75,30 +76,16 @@ class _ServiceProviderRegistrationScreenState
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.only(start: 10, bottom: 5),
-                    child: Container(
+                    child: CircleButton(
                       height: 30,
                       width: 30,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0XFF464698).withAlpha(77),
-                            offset: const Offset(0, 3),
-                            blurRadius: 6,
-                          ),
-                        ],
-                      ),
-                      child: IconButton(
-                        onPressed: () {
-                          personalPicture();
-                        },
-                        icon: const Icon(
-                          Icons.camera_alt,
-                          size: 15,
-                          color: Color(0XFF464698),
-                        ),
-                      ),
+                      color: Colors.white,
+                      icon: Icons.camera_alt,
+                      sizeIcon: 15,
+                      colorIcon: const Color(0XFF464698),
+                      function: () {
+                        personalPicture();
+                      },
                     ),
                   ),
                 ],
@@ -217,26 +204,13 @@ class _ServiceProviderRegistrationScreenState
                     children: [
                       Column(
                         children: [
-                          Container(
+                          CircleButton(
                             height: 40,
                             width: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0XFFF1F1F9),
-                              borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0XFF464698).withAlpha(41),
-                                  offset: const Offset(0, 3),
-                                  blurRadius: 6,
-                                ),
-                              ],
-                            ),
-                            child: IconButton(
-                                icon: const Icon(
-                                  Icons.image,
-                                  color: Color(0XFF464698),
-                                ),
-                                onPressed: () {}),
+                            color: const Color(0XFFF1F1F9),
+                            icon: Icons.image,
+                            colorIcon: const Color(0XFF464698),
+                            function: () {},
                           ),
                           Text(
                             'المعرض',
@@ -253,26 +227,13 @@ class _ServiceProviderRegistrationScreenState
                       ),
                       Column(
                         children: [
-                          Container(
+                          CircleButton(
                             height: 40,
                             width: 40,
-                            decoration: BoxDecoration(
-                              color: const Color(0XFFF1F1F9),
-                              borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0XFF464698).withAlpha(41),
-                                  offset: const Offset(0, 3),
-                                  blurRadius: 6,
-                                ),
-                              ],
-                            ),
-                            child: IconButton(
-                                icon: const Icon(
-                                  Icons.camera_alt,
-                                  color: Color(0XFF464698),
-                                ),
-                                onPressed: () {}),
+                            color: const Color(0XFFF1F1F9),
+                            icon: Icons.camera_alt,
+                            colorIcon: const Color(0XFF464698),
+                            function: () {},
                           ),
                           Text(
                             'الكاميرا',
