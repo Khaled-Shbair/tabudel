@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import 'Screen/Main_Screen.dart';
 import 'Screen/Service_Provider_Registration_Screen.dart';
@@ -20,15 +21,49 @@ class _AllPagesState extends State<AllPages> {
     Icons.person,
   ];
   final List<BnItem> bnItem = [
-    BnItem(widget: const MainScreen()),
-    BnItem(widget: const MainScreen()),
-    BnItem(widget: const ServiceProviderRegistrationScreen()),
-    BnItem(widget: const MainScreen()),
+    BnItem(widget: const MainScreen(), title: 'الملف الشخصي'),
+    BnItem(widget: const MainScreen(), title: 'الإشعارات'),
+    BnItem(
+        widget: const ServiceProviderRegistrationScreen(),
+        title: 'تسجيل كمزود خدمة'),
+    BnItem(widget: const MainScreen(), title: 'الرئيسية'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text(
+          bnItem[selectedIndex].title,
+          style: const TextStyle(
+            fontFamily: 'HelveticaNeueLTArabic',
+            color: Color(0XFF464698),
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        leading: Padding(
+          padding: const EdgeInsetsDirectional.only(start: 25),
+          child: CircleAvatar(
+            radius: 30,
+            backgroundColor: const Color(0XFFF1F1F9),
+            child: IconButton(
+              onPressed: () {
+                  ZoomDrawer.of(context)!.toggle();
+              },
+              icon: const Icon(
+                Icons.menu,
+                size: 18,
+                color: Color(0XFF464698),
+              ),
+            ),
+          ),
+        ),
+      ),
       bottomNavigationBar: Container(
         height: 50,
         margin: const EdgeInsetsDirectional.only(

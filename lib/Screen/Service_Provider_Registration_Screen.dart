@@ -40,123 +40,107 @@ class _ServiceProviderRegistrationScreenState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        title: Text(
-          'تسجيل كمزود خدمة',
-          style: TextStyle(
-            color: const Color(0XFF464698),
-            fontSize: 17,
-            fontFamily: font,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
+    return ListView(
+      padding: const EdgeInsetsDirectional.only(
+        top: 27,
+        start: 37,
+        end: 37,
       ),
-      body: ListView(
-        padding: const EdgeInsetsDirectional.only(
-          top: 27,
-          start: 37,
-          end: 37,
-        ),
-        physics: const NeverScrollableScrollPhysics(),
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Stack(
-                alignment: AlignmentDirectional.bottomStart,
-                children: [
-                  const CircleAvatar(
-                    radius: 75,
-                    backgroundImage: AssetImage('images/saja.jpg'),
+      physics: const NeverScrollableScrollPhysics(),
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: AlignmentDirectional.bottomStart,
+              children: [
+                const CircleAvatar(
+                  radius: 75,
+                  backgroundImage: AssetImage('images/saja.jpg'),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.only(start: 10, bottom: 5),
+                  child: CircleButton(
+                    height: 30,
+                    width: 30,
+                    color: Colors.white,
+                    icon: Icons.camera_alt,
+                    sizeIcon: 15,
+                    colorIcon: const Color(0XFF464698),
+                    function: () {
+                      personalPicture();
+                    },
                   ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.only(start: 10, bottom: 5),
-                    child: CircleButton(
-                      height: 30,
-                      width: 30,
-                      color: Colors.white,
-                      icon: Icons.camera_alt,
-                      sizeIcon: 15,
-                      colorIcon: const Color(0XFF464698),
-                      function: () {
-                        personalPicture();
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 28.4,
-          ),
-          const TextFieldProfile(
-            keyboardType: TextInputType.text,
-            nameFiled: 'الاسم الكامل',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
-            keyboardType: TextInputType.text,
-            nameFiled: 'رقم الجوال',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
-            keyboardType: TextInputType.text,
-            nameFiled: 'المهنة',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          MenuChoose(
-            function: (String? value) {
-              if (value != null) {
-                setState(() {
-                  selectedCityId = value;
-                });
-              }
-            },
-            selectedId: selectedCityId,
-            list: city,
-            nameFiled: 'المدينة',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          MenuChoose(
-            function: (String? value) {
-              if (value != null) {
-                setState(() {
-                  selectedAreaId = value;
-                });
-              }
-            },
-            selectedId: selectedAreaId,
-            list: area,
-            nameFiled: 'المنطقة / الشارع',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
-            child: Buttons(
-              name: 'تسجيل',
-              x: 45,
-              y: double.infinity,
-              function: () {},
+                ),
+              ],
             ),
+          ],
+        ),
+        const SizedBox(
+          height: 28.4,
+        ),
+        const TextFieldProfile(
+          keyboardType: TextInputType.text,
+          nameFiled: 'الاسم الكامل',
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const TextFieldProfile(
+          keyboardType: TextInputType.text,
+          nameFiled: 'رقم الجوال',
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const TextFieldProfile(
+          keyboardType: TextInputType.text,
+          nameFiled: 'المهنة',
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        MenuChoose(
+          function: (String? value) {
+            if (value != null) {
+              setState(() {
+                selectedCityId = value;
+              });
+            }
+          },
+          selectedId: selectedCityId,
+          list: city,
+          nameFiled: 'المدينة',
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        MenuChoose(
+          function: (String? value) {
+            if (value != null) {
+              setState(() {
+                selectedAreaId = value;
+              });
+            }
+          },
+          selectedId: selectedAreaId,
+          list: area,
+          nameFiled: 'المنطقة / الشارع',
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
+          child: Buttons(
+            name: 'تسجيل',
+            x: 45,
+            y: double.infinity,
+            function: () {},
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'AllPages.dart';
 import 'Screen/Main_Screen.dart';
+import 'Screen/Menus.dart';
 import 'Screen/Service_Provider_Registration_Screen.dart';
 import 'Screen/Splash_Screen.dart';
 
@@ -23,8 +24,10 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/AllPages',
+      initialRoute: '/Home',
       routes: {
+        '/Home': (context) => const Home(),
+
         '/AllPages': (context) => const AllPages(),
         '/MainScreen': (context) => const MainScreen(),
         '/SplashScreen': (context) => const SplashScreen(),
