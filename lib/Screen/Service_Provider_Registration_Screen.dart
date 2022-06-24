@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Widget/Buttons.dart';
+import '../Widget/Menu_Choose.dart';
+import '../Widget/Text_Field_Profile.dart';
 import '../models/City.dart';
 
 class ServiceProviderRegistrationScreen extends StatefulWidget {
@@ -33,6 +35,7 @@ class _ServiceProviderRegistrationScreenState
   ];
   String? selectedCityId;
   String? selectedAreaId;
+  String font = 'HelveticaNeueLTArabic';
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +44,12 @@ class _ServiceProviderRegistrationScreenState
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'تسجيل كمزود خدمة',
           style: TextStyle(
-            color: Color(0XFF464698),
+            color: const Color(0XFF464698),
             fontSize: 17,
-            fontFamily: 'Helvetica',
+            fontFamily: font,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -63,17 +66,18 @@ class _ServiceProviderRegistrationScreenState
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
-                alignment: AlignmentDirectional.bottomEnd,
+                alignment: AlignmentDirectional.bottomStart,
                 children: [
                   const CircleAvatar(
                     radius: 75,
                     backgroundImage: AssetImage('images/saja.jpg'),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 10),
+                    padding:
+                        const EdgeInsetsDirectional.only(start: 10, bottom: 5),
                     child: Container(
-                      height: 25,
-                      width: 25,
+                      height: 30,
+                      width: 30,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
@@ -86,7 +90,9 @@ class _ServiceProviderRegistrationScreenState
                         ],
                       ),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          personalPicture();
+                        },
                         icon: const Icon(
                           Icons.camera_alt,
                           size: 15,
@@ -95,7 +101,6 @@ class _ServiceProviderRegistrationScreenState
                       ),
                     ),
                   ),
-
                 ],
               ),
             ],
@@ -103,190 +108,190 @@ class _ServiceProviderRegistrationScreenState
           const SizedBox(
             height: 28.4,
           ),
-          TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsetsDirectional.only(
-                top: 9,
-                bottom: 8,
-                start: 20,
-              ),
-              hintText: 'الاسم الكامل',
-              hintStyle: TextStyle(
-                fontSize: 10,
-                fontFamily: 'Helvetica',
-                color: const Color(0XFF464698).withAlpha(204),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              fillColor: const Color(0XFFF1F1F9),
-              filled: true,
-            ),
+          const TextFieldProfile(
+            keyboardType: TextInputType.text,
+            nameFiled: 'الاسم الكامل',
           ),
           const SizedBox(
             height: 20,
           ),
-          TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsetsDirectional.only(
-                top: 9,
-                bottom: 8,
-                start: 20,
-              ),
-              hintText: 'رقم الجوال',
-              hintStyle: TextStyle(
-                fontSize: 10,
-                fontFamily: 'Helvetica',
-                color: const Color(0XFF464698).withAlpha(204),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              fillColor: const Color(0XFFF1F1F9),
-              filled: true,
-            ),
+          const TextFieldProfile(
+            keyboardType: TextInputType.text,
+            nameFiled: 'رقم الجوال',
           ),
           const SizedBox(
             height: 20,
           ),
-          TextField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsetsDirectional.only(
-                top: 9,
-                bottom: 8,
-                start: 20,
-              ),
-              hintText: 'المهنة',
-              hintStyle: TextStyle(
-                fontSize: 10,
-                fontFamily: 'Helvetica',
-                color: const Color(0XFF464698).withAlpha(204),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(4),
-              ),
-              fillColor: const Color(0XFFF1F1F9),
-              filled: true,
-            ),
+          const TextFieldProfile(
+            keyboardType: TextInputType.text,
+            nameFiled: 'المهنة',
           ),
           const SizedBox(
             height: 20,
           ),
-          Container(
-            padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: const Color(0XFFF1F1F9),
-                borderRadius: BorderRadius.circular(4)),
-            child: DropdownButton<String>(
-                borderRadius: BorderRadius.circular(4),
-                hint: Text(
-                  'المدينة',
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontFamily: 'Helvetica',
-                    color: const Color(0XFF464698).withAlpha(204),
-                  ),
-                ),
-                menuMaxHeight: 250,
-                underline: const Text(''),
-                isExpanded: true,
-                icon: const Icon(Icons.keyboard_arrow_down),
-                dropdownColor: const Color(0XFFF1F1F9),
-                style: TextStyle(
-                  fontSize: 10,
-                  fontFamily: 'Helvetica',
-                  color: const Color(0XFF464698).withAlpha(204),
-                ),
-                value: selectedCityId,
-                items: city
-                    .map(
-                      (City city) => DropdownMenuItem<String>(
-                        child: Text(city.name),
-                        value: city.id.toString(),
-                      ),
-                    )
-                    .toList(),
-                onChanged: (String? value) {
-                  if (value != null) {
-                    setState(() {
-                      selectedCityId = value;
-                    });
-                  }
-                }),
+          MenuChoose(
+            function: (String? value) {
+              if (value != null) {
+                setState(() {
+                  selectedCityId = value;
+                });
+              }
+            },
+            selectedId: selectedCityId,
+            list: city,
+            nameFiled: 'المدينة',
           ),
           const SizedBox(
             height: 20,
           ),
-          Container(
-            padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
-            width: double.infinity,
-            decoration: BoxDecoration(
-                color: const Color(0XFFF1F1F9),
-                borderRadius: BorderRadius.circular(4)),
-            child: DropdownButton<String>(
-                borderRadius: BorderRadius.circular(4),
-                hint: Text(
-                  'المنطقة / الشارع',
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontFamily: 'Helvetica',
-                    color: const Color(0XFF464698).withAlpha(204),
-                  ),
-                ),
-                menuMaxHeight: 250,
-                underline: const Text(''),
-                isExpanded: true,
-                icon: const Icon(Icons.keyboard_arrow_down),
-                dropdownColor: const Color(0XFFF1F1F9),
-                style: TextStyle(
-                  fontSize: 10,
-                  fontFamily: 'Helvetica',
-                  color: const Color(0XFF464698).withAlpha(204),
-                ),
-                value: selectedAreaId,
-                items: area
-                    .map(
-                      (City area) => DropdownMenuItem<String>(
-                        child: Text(area.name),
-                        value: area.id.toString(),
-                      ),
-                    )
-                    .toList(),
-                onChanged: (String? value) {
-                  if (value != null) {
-                    setState(() {
-                      selectedAreaId = value;
-                    });
-                  }
-                }),
+          MenuChoose(
+            function: (String? value) {
+              if (value != null) {
+                setState(() {
+                  selectedAreaId = value;
+                });
+              }
+            },
+            selectedId: selectedAreaId,
+            list: area,
+            nameFiled: 'المنطقة / الشارع',
           ),
           const SizedBox(
             height: 30,
           ),
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: const Text(
-                'تسجيل',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontFamily: 'Helvetica',
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                  primary: const Color(0XFF464698),
-                  minimumSize: const Size(double.infinity, 45)),
+            child: Buttons(
+              name: 'تسجيل',
+              x: 45,
+              y: double.infinity,
+              function: () {},
             ),
           ),
         ],
       ),
+    );
+  }
+
+  void personalPicture() {
+    showModalBottomSheet(
+      barrierColor: Colors.white.withAlpha(128),
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      context: context,
+      builder: (context) {
+        return BottomSheet(
+          backgroundColor: const Color(0XFFF1F1F9),
+          elevation: 4,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(22),
+              topRight: Radius.circular(22),
+            ),
+          ),
+          onClosing: () {},
+          builder: (context) {
+            return SizedBox(
+              height: 163,
+              width: double.infinity,
+              child: ListView(
+                physics: const NeverScrollableScrollPhysics(),
+                padding: const EdgeInsetsDirectional.only(
+                  top: 32,
+                  start: 37,
+                ),
+                children: [
+                  Text(
+                    'الصورة الشخصية',
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: const Color(0XFF464698),
+                      fontFamily: font,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0XFFF1F1F9),
+                              borderRadius: BorderRadius.circular(100),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0XFF464698).withAlpha(41),
+                                  offset: const Offset(0, 3),
+                                  blurRadius: 6,
+                                ),
+                              ],
+                            ),
+                            child: IconButton(
+                                icon: const Icon(
+                                  Icons.image,
+                                  color: Color(0XFF464698),
+                                ),
+                                onPressed: () {}),
+                          ),
+                          Text(
+                            'المعرض',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: const Color(0XFF464698),
+                              fontFamily: font,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 21,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0XFFF1F1F9),
+                              borderRadius: BorderRadius.circular(100),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0XFF464698).withAlpha(41),
+                                  offset: const Offset(0, 3),
+                                  blurRadius: 6,
+                                ),
+                              ],
+                            ),
+                            child: IconButton(
+                                icon: const Icon(
+                                  Icons.camera_alt,
+                                  color: Color(0XFF464698),
+                                ),
+                                onPressed: () {}),
+                          ),
+                          Text(
+                            'الكاميرا',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: const Color(0XFF464698).withAlpha(255),
+                              fontFamily: font,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

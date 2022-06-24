@@ -14,15 +14,15 @@ class AllPages extends StatefulWidget {
 class _AllPagesState extends State<AllPages> {
   int selectedIndex = 0;
   List<IconData> data = [
-    Icons.person,
-    Icons.volunteer_activism_sharp,
-    Icons.notifications_active,
     Icons.house,
+    Icons.notifications_active,
+    Icons.volunteer_activism_sharp,
+    Icons.person,
   ];
   final List<BnItem> bnItem = [
     BnItem(widget: const MainScreen()),
-    BnItem(widget: const ServiceProviderRegistrationScreen()),
     BnItem(widget: const MainScreen()),
+    BnItem(widget: const ServiceProviderRegistrationScreen()),
     BnItem(widget: const MainScreen()),
   ];
 
