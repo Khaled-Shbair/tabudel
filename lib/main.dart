@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'AllPages.dart';
+import 'Screen/Info_Screen.dart';
+import 'Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/Menus.dart';
 import 'Screen/Service_Provider_Registration_Screen.dart';
 import 'Screen/Splash_Screen.dart';
+import 'models/Menu/Menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,15 +27,18 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/Home',
+      initialRoute: '/InfoScreen',
       routes: {
-        '/Home': (context) => const Home(),
+         '/Menu': (context) => const Menu(),
 
-        '/AllPages': (context) => const AllPages(),
-        '/MainScreen': (context) => const MainScreen(),
-        '/SplashScreen': (context) => const SplashScreen(),
-        '/ServiceProviderRegistrationScreen': (context) =>
-            const ServiceProviderRegistrationScreen(),
+
+        // '/AllPages': (context) => const AllPages(),
+         '/MainScreen': (context) => const MainScreen(),
+         '/LogoutScreen': (context) => const LogoutScreen(),
+         '/InfoScreen': (context) => const InfoScreen(),
+         '/SplashScreen': (context) => const SplashScreen(),
+         '/ServiceProviderRegistrationScreen': (context) =>
+             const ServiceProviderRegistrationScreen(),
       },
     );
   }

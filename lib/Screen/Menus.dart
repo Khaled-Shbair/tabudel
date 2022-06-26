@@ -1,7 +1,9 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../AllPages.dart';
+import 'Service_Provider_Registration_Screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -23,7 +25,7 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      mainScreen: const AllPages(),
+      mainScreen: currentScreen(),
       borderRadius: 40,
       boxShadow: [
         BoxShadow(
@@ -43,31 +45,23 @@ class _HomeState extends State<Home> {
   Widget currentScreen() {
     switch (currentIndex) {
       case 0:
-        return HomeScreen(
-          title: 'الملف الشخصي',
-        );
+        return const HomeScreen(body: AllPages());
       case 1:
-        return HomeScreen(
-          title: "Inbox",
-        );
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
       case 2:
-        return HomeScreen(
-          title: "Sent",
-        );
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
+
       case 3:
-        return HomeScreen(
-          title: "Favorite",
-        );
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
+
       case 4:
-        return HomeScreen(
-          title: "Archive",
-        );
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
+
       case 5:
-        return HomeScreen(
-          title: "Spam",
-        );
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
+
       default:
-        return HomeScreen();
+        return const HomeScreen(body: ServiceProviderRegistrationScreen());
     }
   }
 }
@@ -87,13 +81,39 @@ class _DrawerScreenState extends State<DrawerScreen> {
     return Scaffold(
       backgroundColor: const Color(0XFF464698),
       body: ListView(
-        padding: const EdgeInsetsDirectional.only(top: 200, start: 20, end: 0),
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsetsDirectional.only(top: 40, start: 20, end: 0),
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(
+                width: 10,
+              ),
+              CircleAvatar(
+                radius: 18,
+                backgroundColor: const Color(0XFFF1F1F9),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.close,
+                    color: Color(0XFF464698),
+                    size: 20,
+                  ),
+                  onPressed: () {
+                    ZoomDrawer.of(context)!.close();
+                  },
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 140,
+          ),
           drawerList(Icons.person, "الملف الشخصي", 0),
           drawerList(Icons.volunteer_activism_sharp, "قائمة مزودي الخدمات", 1),
           drawerList(Icons.personal_injury, "الملف الشخصي(مزود الخدمات)", 2),
           drawerList(Icons.facebook, "راسلنا على واتساب", 3),
-          drawerList(Icons.info, "عن التطبيق", 4),
+          drawerList(Icons.help_outlined, "عن التطبيق", 4),
           drawerList(Icons.logout, "تسجيل الخروج", 5),
         ],
       ),
@@ -106,7 +126,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
         widget.setIndex(index);
       },
       child: Container(
-        margin: const EdgeInsets.only(bottom: 23),
+        padding: const EdgeInsetsDirectional.only(bottom: 30),
         child: Row(
           children: [
             Icon(
@@ -134,9 +154,8 @@ class _DrawerScreenState extends State<DrawerScreen> {
 ///////////////////////
 
 class HomeScreen extends StatefulWidget {
-  final String title;
-
-  const HomeScreen({Key? key, this.title = "Home"}) : super(key: key);
+  const HomeScreen({Key? key, required this.body}) : super(key: key);
+  final Widget body;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -146,26 +165,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-        leading: DrawerWidget(),
-      ),
+      body: widget.body,
     );
   }
 }
 
-class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        ZoomDrawer.of(context)!.toggle();
-      },
-      icon: Icon(Icons.menu),
-    );
-  }
-}
+*/
