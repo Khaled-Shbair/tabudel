@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Widget/Button_AppBar.dart';
 import '../Widget/Section_Button.dart';
 
 class MainScreen extends StatefulWidget {
@@ -11,56 +12,80 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      padding: const EdgeInsetsDirectional.only(start: 37, end: 37, top: 20),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
-        childAspectRatio: 135 / 126,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          'الرئيسية',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'HelveticaNeueLTArabic',
+            color: Color(0XFF464698),
+          ),
+        ),
+        leadingWidth: 75,
+        leading: ButtonAppBar(
+          start: 35,
+          icon: Icons.menu,
+          function: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
-      children: [
-        SectionButton(
-          pathImage: 'images/الأثاث.png',
-          nameSection: 'قسم الأثاث',
-          function: () {},
+      body: GridView(
+        padding: const EdgeInsetsDirectional.only(start: 37, end: 37, top: 20),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          childAspectRatio: 135 / 126,
         ),
-        SectionButton(
-          pathImage: 'images/السجاد والمفارش.png',
-          nameSection: 'قسم السجاد والمفارش',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/أجهزة الجوال.png',
-          nameSection: 'قسم أجهزة الجوال',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/أجهزة الحاسوب.png',
-          nameSection: 'قسم أجهزة الحاسوب',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/الدراجات النارية.png',
-          nameSection: 'قسم الدراجات النارية',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/الدراجات الهوائية.png',
-          nameSection: 'قسم الدراجات الهوائية',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/السيارات.png',
-          nameSection: 'قسم السيارات',
-          function: () {},
-        ),
-        SectionButton(
-          pathImage: 'images/الأجهزة الكهربائية.png',
-          nameSection: 'قسم الأجهزة الكهربائية',
-          function: () {},
-        ),
-      ],
+        children: [
+          SectionButton(
+            pathImage: 'images/الأثاث.png',
+            nameSection: 'قسم الأثاث',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/السجاد والمفارش.png',
+            nameSection: 'قسم السجاد والمفارش',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/أجهزة الجوال.png',
+            nameSection: 'قسم أجهزة الجوال',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/أجهزة الحاسوب.png',
+            nameSection: 'قسم أجهزة الحاسوب',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/الدراجات النارية.png',
+            nameSection: 'قسم الدراجات النارية',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/الدراجات الهوائية.png',
+            nameSection: 'قسم الدراجات الهوائية',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/السيارات.png',
+            nameSection: 'قسم السيارات',
+            function: () {},
+          ),
+          SectionButton(
+            pathImage: 'images/الأجهزة الكهربائية.png',
+            nameSection: 'قسم الأجهزة الكهربائية',
+            function: () {},
+          ),
+        ],
+      ),
     );
   }
 }

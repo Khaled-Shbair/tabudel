@@ -1,47 +1,31 @@
 import 'package:flutter/material.dart';
 
+import '../Widget/Button_AppBar.dart';
+
 class InfoScreen extends StatelessWidget {
   const InfoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leadingWidth: 75,
-        leading: Padding(
-          padding: const EdgeInsetsDirectional.only(start: 40),
-          child: CircleAvatar(
-            radius: 20,
-            backgroundColor: const Color(0XFFF1F1F9),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                size: 18,
-                color: Color(0XFF464698),
-              ),
-            ),
-          ),
+        leadingWidth: 78,
+        leading: ButtonAppBar(
+          start: 40,
+          paddingStart: 20,
+          icon: Icons.arrow_back_ios,
+          function: () {
+            Navigator.pop(context);
+          },
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsetsDirectional.only(end: 37),
-            child: CircleAvatar(
-              radius: 20,
-              backgroundColor: const Color(0XFFF1F1F9),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  size: 18,
-                  color: Color(0XFF464698),
-                ),
-              ),
-            ),
+          ButtonAppBar(
+            end: 40,
+            icon: Icons.menu,
+            function: () {},
           ),
         ],
       ),
