@@ -4,6 +4,7 @@ import 'AllPages.dart';
 import 'Screen/Info_Screen.dart';
 import 'Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
+import 'Screen/Menus.dart';
 import 'Screen/Notifications_Screen.dart';
 import 'Screen/Profile_Screen.dart';
 import 'Screen/Service_Provider_Registration_Screen.dart';
@@ -28,9 +29,9 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/AllPages',
+      initialRoute: '/Home',
       routes: {
-        '/Menu': (context) => const Menu(),
+        '/Home': (context) => const Home(),
         '/AllPages': (context) => const AllPages(),
         '/MainScreen': (context) => const MainScreen(),
         '/NotificationsScreen': (context) => const NotificationsScreen(),

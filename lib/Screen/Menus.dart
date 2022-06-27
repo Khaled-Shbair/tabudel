@@ -1,9 +1,11 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../AllPages.dart';
-import 'Service_Provider_Registration_Screen.dart';
+import '../Widget/Button_AppBar.dart';
+import 'Info_Screen.dart';
+import 'Logout_Screen.dart';
+import 'Profile_Screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,20 +15,27 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentIndex = 0;
+  MenuItem currentItem = MenuItems.mainScreen;
 
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      menuScreen: DrawerScreen(
-        setIndex: (index) {
-          setState(() {
-            currentIndex = index;
-          });
+      menuScreen: Builder(
+        builder: (context) {
+          return MenuPage(
+            currentItem: currentItem,
+            onSelectedItem: (item) {
+              setState(() {
+                currentItem = item;
+                ZoomDrawer.of(context)!.close();
+              });
+            },
+          );
         },
       ),
       mainScreen: currentScreen(),
       borderRadius: 40,
+      menuScreenWidth: 237,
       boxShadow: [
         BoxShadow(
           spreadRadius: -48,
@@ -35,140 +44,114 @@ class _HomeState extends State<Home> {
           offset: const Offset(75, 0),
         ),
       ],
-      angle: 0.0,
       slideWidth: 281.5,
+      angle: 0.0,
       isRtl: true,
       menuBackgroundColor: const Color(0XFF464698),
+      androidCloseOnBackTap: true,
     );
   }
 
   Widget currentScreen() {
-    switch (currentIndex) {
-      case 0:
-        return const HomeScreen(body: AllPages());
-      case 1:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
-      case 2:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
-
-      case 3:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
-
-      case 4:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
-
-      case 5:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
-
+    switch (currentItem) {
+      case MenuItems.profilePerson:
+        return const ProfileScreen();
+      case MenuItems.listProvideService:
+        return const ProfileScreen();
+      case MenuItems.profileProvideService:
+        return const ProfileScreen();
+      case MenuItems.whatApp:
+        return const ProfileScreen();
+      case MenuItems.info:
+        return const InfoScreen();
+      case MenuItems.logout:
+        return const LogoutScreen();
       default:
-        return const HomeScreen(body: ServiceProviderRegistrationScreen());
+        return const AllPages();
     }
   }
 }
 
-class DrawerScreen extends StatefulWidget {
-  final ValueSetter setIndex;
+class MenuPage extends StatelessWidget {
+  final MenuItem currentItem;
+  final ValueChanged<MenuItem> onSelectedItem;
 
-  const DrawerScreen({Key? key, required this.setIndex}) : super(key: key);
+  const MenuPage({
+    Key? key,
+    required this.currentItem,
+    required this.onSelectedItem,
+  }) : super(key: key);
 
-  @override
-  State<DrawerScreen> createState() => _DrawerScreenState();
-}
-
-class _DrawerScreenState extends State<DrawerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0XFF464698),
-      body: ListView(
-        physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsetsDirectional.only(top: 40, start: 20, end: 0),
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(
-                width: 10,
-              ),
-              CircleAvatar(
-                radius: 18,
-                backgroundColor: const Color(0XFFF1F1F9),
-                child: IconButton(
-                  icon: const Icon(
-                    Icons.close,
-                    color: Color(0XFF464698),
-                    size: 20,
-                  ),
-                  onPressed: () {
+      body: SafeArea(
+        child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsetsDirectional.only(top: 20, start: 20, end: 0),
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ButtonAppBar(
+                  function: () {
                     ZoomDrawer.of(context)!.close();
                   },
+                  icon: Icons.close,
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 140,
-          ),
-          drawerList(Icons.person, "الملف الشخصي", 0),
-          drawerList(Icons.volunteer_activism_sharp, "قائمة مزودي الخدمات", 1),
-          drawerList(Icons.personal_injury, "الملف الشخصي(مزود الخدمات)", 2),
-          drawerList(Icons.facebook, "راسلنا على واتساب", 3),
-          drawerList(Icons.help_outlined, "عن التطبيق", 4),
-          drawerList(Icons.logout, "تسجيل الخروج", 5),
-        ],
-      ),
-    );
-  }
-
-  Widget drawerList(IconData icon, String text, int index) {
-    return GestureDetector(
-      onTap: () {
-        widget.setIndex(index);
-      },
-      child: Container(
-        padding: const EdgeInsetsDirectional.only(bottom: 30),
-        child: Row(
-          children: [
-            Icon(
-              icon,
-              color: Colors.white,
+              ],
             ),
-            const SizedBox(
-              width: 9,
-            ),
-            Text(
-              text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 13,
-                fontFamily: 'HelveticaNeueLTArabic',
-              ),
-            ),
+            const SizedBox(height: 140),
+            ...MenuItems.all.map(buildMenuItems).toList(),
           ],
         ),
       ),
     );
   }
-}
 
-///////////////////////
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key, required this.body}) : super(key: key);
-  final Widget body;
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: widget.body,
+  Widget buildMenuItems(MenuItem item) {
+    return ListTile(
+      selected: currentItem == item,
+      contentPadding: EdgeInsetsDirectional.zero,
+      minLeadingWidth: 0,
+      leading: Icon(item.icon, color: Colors.white),
+      title: Text(
+        item.title,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 13,
+          fontFamily: 'HelveticaNeueLTArabic',
+        ),
+      ),
+      onTap: () => onSelectedItem(item),
     );
   }
 }
 
+class MenuItem {
+  final IconData icon;
+  final String title;
 
-*/
+  const MenuItem(this.icon, this.title);
+}
+
+class MenuItems {
+  static const mainScreen = MenuItem(Icons.person, 'الرئيسية');
+  static const profilePerson = MenuItem(Icons.person, 'الملف الشخصي');
+  static const listProvideService =
+      MenuItem(Icons.volunteer_activism_sharp, 'قائمة مزودي الخدمات');
+  static const profileProvideService =
+      MenuItem(Icons.personal_injury, 'الملف الشخصي(مزود الخدمات)');
+  static const whatApp = MenuItem(Icons.facebook, 'راسلنا على الواتس');
+  static const info = MenuItem(Icons.help_outlined, 'عن التطبيق');
+  static const logout = MenuItem(Icons.logout, 'تسجيل خروج');
+  static const all = <MenuItem>[
+    profilePerson,
+    listProvideService,
+    profileProvideService,
+    whatApp,
+    info,
+    logout,
+  ];
+}

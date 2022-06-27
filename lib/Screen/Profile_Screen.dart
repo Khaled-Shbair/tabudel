@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../Widget/Button_AppBar.dart';
 
@@ -16,7 +17,9 @@ class ProfileScreen extends StatelessWidget {
         leading: ButtonAppBar(
           start: 40,
           icon: Icons.menu,
-          function: () {},
+          function: () {
+            ZoomDrawer.of(context)!.toggle();
+          },
         ),
         actions: [
           ButtonAppBar(
@@ -48,9 +51,10 @@ class ProfileScreen extends StatelessWidget {
                 const Text(
                   'سجى الأشرم',
                   style: TextStyle(
-                      color: Color(0XFF464698),
-                      fontSize: 17,
-                      fontFamily: 'HelveticaNeueLTArabic'),
+                    color: Color(0XFF464698),
+                    fontSize: 17,
+                    fontFamily: 'HelveticaNeueLTArabic',
+                  ),
                 ),
                 const SizedBox(height: 39),
                 Row(

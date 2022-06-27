@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../Widget/Button_AppBar.dart';
 
@@ -25,7 +26,9 @@ class InfoScreen extends StatelessWidget {
           ButtonAppBar(
             end: 40,
             icon: Icons.menu,
-            function: () {},
+            function: () {
+              ZoomDrawer.of(context)!.toggle();
+            },
           ),
         ],
       ),

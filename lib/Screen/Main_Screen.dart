@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../Widget/Button_AppBar.dart';
 import '../Widget/Section_Button.dart';
 
@@ -9,10 +10,13 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+Widget openDrawer() => openDrawer();
+
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -31,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
           start: 35,
           icon: Icons.menu,
           function: () {
-            Navigator.pop(context);
+            ZoomDrawer.of(context)!.toggle();
           },
         ),
       ),

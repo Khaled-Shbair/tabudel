@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Screen/Main_Screen.dart';
 import 'Screen/Notifications_Screen.dart';
 import 'Screen/Profile_Screen.dart';
@@ -14,8 +13,6 @@ class AllPages extends StatefulWidget {
   @override
   State<AllPages> createState() => _AllPagesState();
 }
-
-Widget openDrawer() => openDrawer();
 
 class _AllPagesState extends State<AllPages> {
   int selectedIndex = 0;
@@ -90,3 +87,4 @@ class _AllPagesState extends State<AllPages> {
     );
   }
 }
+///////////////////////////////////////////////////////////////////////////////
