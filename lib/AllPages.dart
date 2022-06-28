@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/Notifications_Screen.dart';
 import 'Screen/Profile_Screen.dart';
-import 'Screen/Service_Provider_Registration_Screen.dart';
+import 'Screen/Service_Provide_Registration_Screen.dart';
 import 'models/BnItem.dart';
 
 class AllPages extends StatefulWidget {

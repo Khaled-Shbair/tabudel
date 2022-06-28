@@ -152,7 +152,10 @@ class _ServiceProviderRegistrationScreenState
               name: 'تسجيل',
               x: 45,
               y: double.infinity,
-              function: () {},
+              function: () {
+                Navigator.pushReplacementNamed(
+                    context, '/ProfileProvideServiceScreen');
+              },
             ),
           ),
         ],

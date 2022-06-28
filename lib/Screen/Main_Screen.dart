@@ -36,6 +36,7 @@ class _MainScreenState extends State<MainScreen> {
           icon: Icons.menu,
           function: () {
             ZoomDrawer.of(context)!.toggle();
+            //AppDrawer.of(context)!.toggle();
           },
         ),
       ),

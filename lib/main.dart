@@ -6,10 +6,11 @@ import 'Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/Menus.dart';
 import 'Screen/Notifications_Screen.dart';
+import 'Screen/Profile_Provide_Service_Screen.dart';
 import 'Screen/Profile_Screen.dart';
-import 'Screen/Service_Provider_Registration_Screen.dart';
+import 'Screen/Servic_Provide_Alter_Screen.dart';
+import 'Screen/Service_Provide_Registration_Screen.dart';
 import 'Screen/Splash_Screen.dart';
-import 'models/Menu/Menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,10 +30,12 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/Home',
+      initialRoute: '/ProfileProvideServiceScreen',
       routes: {
         '/Home': (context) => const Home(),
         '/AllPages': (context) => const AllPages(),
+        '/ServiceProviderAlterScreen': (context) => const ServiceProviderAlterScreen(),
+        '/ProfileProvideServiceScreen': (context) => const ProfileProvideServiceScreen(),
         '/MainScreen': (context) => const MainScreen(),
         '/NotificationsScreen': (context) => const NotificationsScreen(),
         '/ProfileScreen': (context) => const ProfileScreen(),
