@@ -1,10 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////
+/*
+            Screen Successfully registered as a service provider
+               صفحة لقد تم تسجيلك في قسم مزودي الخدمات بنجاح
+*/
+////////////////////////////////////////////////////////////////////////////////
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../Widget/Button_AppBar.dart';
 import '../Widget/Buttons.dart';
 
-class ProvideService extends StatelessWidget {
-  const ProvideService({Key? key}) : super(key: key);
+class SuccessfullyRegisteredAsServiceProviderScreen extends StatelessWidget {
+  const SuccessfullyRegisteredAsServiceProviderScreen({Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +25,7 @@ class ProvideService extends StatelessWidget {
         leadingWidth: 60,
         leading: ButtonAppBar(
           start: 25,
-          paddingStart: 15,
+          paddingStart: 5,
           icon: Icons.arrow_back_ios,
           size: 15,
           function: () {
@@ -26,33 +34,34 @@ class ProvideService extends StatelessWidget {
         ),
       ),
       body: ListView(
-        padding:
-            const EdgeInsetsDirectional.only(start: 76.5, end: 63, top: 88),
+        padding: const EdgeInsetsDirectional.only(start: 70, end: 70, top: 100),
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          Image.asset('images/provide.png'),
-          const SizedBox(height: 36.5),
-          const SizedBox(
-            height: 70,
-            width: 207,
-            child: Text(
-              'لقد تم تسجيلك في قسم\n مزودي الخدمات بنجاح',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: 'HelveticaNeueLTArabic',
-                color: Color(0XFF292959),
-              ),
+          SvgPicture.asset('images/تسجيل مزود الخدمة.svg',
+              fit: BoxFit.fitWidth, height: 300),
+          const SizedBox(height: 45),
+          const Text(
+            'لقد تم تسجيلك في قسم\n مزودي الخدمات بنجاح',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              height: 1.8,
+              fontSize: 17,
+              fontFamily: 'HelveticaNeueLTArabic',
+              color: Color(0XFF292959),
             ),
           ),
-          const SizedBox(height: 30),
-          Buttons(
-            name: 'إلغاء',
-            x: 40,
-            y: 106,
-            function: () {
-              Navigator.pushReplacementNamed(context, '/ListProvideServiceScreen');
-            },
+          Padding(
+            padding:
+                const EdgeInsetsDirectional.only(top: 40, start: 75, end: 75),
+            child: Buttons(
+              name: 'إلغاء',
+              x: 45,
+              y: 106,
+              function: () {
+                Navigator.pushReplacementNamed(
+                    context, '/ListProvideServiceScreen');
+              },
+            ),
           ),
         ],
       ),

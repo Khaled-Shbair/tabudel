@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/Notifications_Screen.dart';
-import 'Screen/Profile_Screen.dart';
+import 'Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
 import 'Screen/Service_Provide_Registration_Screen.dart';
 import 'models/BnItem.dart';
 

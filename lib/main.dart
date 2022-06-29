@@ -9,7 +9,7 @@ import 'Screen/Main_Screen.dart';
 import 'Screen/Menus.dart';
 import 'Screen/Notifications_Screen.dart';
 import 'Screen/Profile_Provide_Service_Screen.dart';
-import 'Screen/Profile_Screen.dart';
+import 'Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
 import 'Screen/Provide_Sevice.dart';
 import 'Screen/Servic_Provide_Alter_Screen.dart';
 import 'Screen/Service_Provide_Registration_Screen.dart';
@@ -33,12 +33,14 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/DetailServiceProvideScreen',
+      initialRoute: '/ProvideService',
       routes: {
         '/Home': (context) => const Home(),
         '/AllPages': (context) => const AllPages(),
-        '/DetailServiceProvideScreen': (context) => const DetailServiceProvideScreen(),
-        '/ProvideService': (context) => const ProvideService(),
+        '/DetailServiceProvideScreen': (context) =>
+            const DetailServiceProvideScreen(),
+        '/ProvideService': (context) =>
+            const SuccessfullyRegisteredAsServiceProviderScreen(),
         '/ListProvideServiceScreen': (context) =>
             const ListProvideServiceScreen(),
         '/ServiceProviderAlterScreen': (context) =>

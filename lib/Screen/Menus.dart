@@ -5,7 +5,7 @@ import '../AllPages.dart';
 import '../Widget/Button_AppBar.dart';
 import 'Info_Screen.dart';
 import 'Logout_Screen.dart';
-import 'Profile_Screen.dart';
+import 'Successfully_Registered_As_Service_Provider_Screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
