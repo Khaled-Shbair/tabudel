@@ -25,7 +25,7 @@ class NotificationsScreen extends StatelessWidget {
         leadingWidth: 78,
         leading: ButtonAppBar(
           start: 40,
-          paddingStart: 20,
+          paddingStart: 5,
           icon: Icons.arrow_back_ios,
           function: () {
             Navigator.pop(context);

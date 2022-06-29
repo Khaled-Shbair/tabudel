@@ -4,6 +4,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../AllPages.dart';
 import '../Widget/Button_AppBar.dart';
 import 'Info_Screen.dart';
+import 'List_Provide_Service_Screen.dart';
 import 'Logout_Screen.dart';
 import 'Successfully_Registered_As_Service_Provider_Screen.dart';
 
@@ -20,7 +21,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-
       menuScreen: Builder(
         builder: (context) {
           return MenuPage(
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
       case MenuItems.profilePerson:
         return const ProfileScreen();
       case MenuItems.listProvideService:
-        return const ProfileScreen();
+        return const ListProvideServiceScreen();
       case MenuItems.profileProvideService:
         return const ProfileScreen();
       case MenuItems.whatApp:
@@ -145,7 +145,7 @@ class MenuItems {
   static const profileProvideService =
       MenuItem(Icons.personal_injury, 'الملف الشخصي(مزود الخدمات)');
   static const whatApp = MenuItem(Icons.facebook, 'راسلنا على الواتس');
-  static const info = MenuItem(Icons.help_outlined, 'عن التطبيق');
+  static const info = MenuItem(Icons.help, 'عن التطبيق');
   static const logout = MenuItem(Icons.logout, 'تسجيل خروج');
   static const all = <MenuItem>[
     profilePerson,

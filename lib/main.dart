@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/ProvideService',
+      initialRoute: '/Home',
       routes: {
         '/Home': (context) => const Home(),
         '/AllPages': (context) => const AllPages(),

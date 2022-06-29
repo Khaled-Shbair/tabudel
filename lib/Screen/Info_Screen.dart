@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../Widget/Button_AppBar.dart';
@@ -16,7 +17,7 @@ class InfoScreen extends StatelessWidget {
         leadingWidth: 78,
         leading: ButtonAppBar(
           start: 40,
-          paddingStart: 20,
+          paddingStart: 5,
           icon: Icons.arrow_back_ios,
           function: () {
             Navigator.pop(context);
@@ -38,10 +39,12 @@ class InfoScreen extends StatelessWidget {
           Column(
             children: [
               const SizedBox(height: 70),
-              Image.asset(
-                'images/عن التطبيق.png',
-                width: 300,
-                height: 100,
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: 40),
+                child: SvgPicture.asset(
+                  'images/Info.svg',
+                  height: 90,
+                ),
               ),
             ],
           ),

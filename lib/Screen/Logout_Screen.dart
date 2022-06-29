@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import '../Widget/Button_AppBar.dart';
@@ -25,7 +26,7 @@ class LogoutScreen extends StatelessWidget {
         leadingWidth: 78,
         leading: ButtonAppBar(
           start: 40,
-          paddingStart: 20,
+          paddingStart: 5,
           icon: Icons.arrow_back_ios,
           function: () {
             Navigator.pop(context);
