@@ -153,8 +153,7 @@ class _ServiceProviderRegistrationScreenState
               x: 45,
               y: double.infinity,
               function: () {
-                Navigator.pushReplacementNamed(
-                    context, '/ProfileProvideServiceScreen');
+                Navigator.pushReplacementNamed(context, '/ProvideService');
               },
             ),
           ),

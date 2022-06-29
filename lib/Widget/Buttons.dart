@@ -6,13 +6,15 @@ class Buttons extends StatelessWidget {
     required this.function,
     required this.name,
     required this.x,
-    required this.y,
+    this.y = double.infinity,
+    this.fontSize = 15,
   }) : super(key: key);
   final String font = 'HelveticaNeueLTArabic';
   final Function() function;
   final String name;
   final double x;
   final double y;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class Buttons extends StatelessWidget {
         name,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 15,
+          fontSize: fontSize,
           fontFamily: font,
           fontWeight: FontWeight.bold,
         ),
