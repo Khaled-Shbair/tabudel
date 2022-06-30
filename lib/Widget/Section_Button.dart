@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SectionButton extends StatelessWidget {
   const SectionButton({
@@ -20,15 +21,15 @@ class SectionButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 80,
-            width: 80,
-            child: Image.asset(pathImage),
+            height: 60,
+            width: 60,
+            child: SvgPicture.asset(pathImage),
           ),
           Text(
             nameSection,
             style: const TextStyle(
               color: Color(0XFF464698),
-              fontSize: 11,
+              fontSize: 13,
               fontFamily: 'HelveticaNeueLTArabic',
               fontWeight: FontWeight.bold,
             ),

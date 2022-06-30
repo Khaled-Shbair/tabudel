@@ -8,6 +8,8 @@ class Buttons extends StatelessWidget {
     required this.x,
     this.y = double.infinity,
     this.fontSize = 15,
+    this.color = defaultColor,
+    this.colorFont = Colors.white,
   }) : super(key: key);
   final String font = 'HelveticaNeueLTArabic';
   final Function() function;
@@ -15,6 +17,9 @@ class Buttons extends StatelessWidget {
   final double x;
   final double y;
   final double fontSize;
+  final Color color;
+  final Color colorFont;
+  static const Color defaultColor = Color(0XFF464698);
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +28,15 @@ class Buttons extends StatelessWidget {
       child: Text(
         name,
         style: TextStyle(
-          color: Colors.white,
+          color: colorFont,
           fontSize: fontSize,
           fontFamily: font,
           fontWeight: FontWeight.bold,
         ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: const Color(0XFF464698),
+        elevation: 0,
+        primary: color,
         minimumSize: Size(y, x),
       ),
     );

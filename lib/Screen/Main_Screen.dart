@@ -50,42 +50,42 @@ class _MainScreenState extends State<MainScreen> {
         ),
         children: [
           SectionButton(
-            pathImage: 'images/الأثاث.png',
+            pathImage: 'images/Furniture.svg',
             nameSection: 'قسم الأثاث',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/السجاد والمفارش.png',
+            pathImage: 'images/carpet.svg',
             nameSection: 'قسم السجاد والمفارش',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/أجهزة الجوال.png',
+            pathImage: 'images/phone.svg',
             nameSection: 'قسم أجهزة الجوال',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/أجهزة الحاسوب.png',
+            pathImage: 'images/computer.svg',
             nameSection: 'قسم أجهزة الحاسوب',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/الدراجات النارية.png',
+            pathImage: 'images/Motorcycle.svg',
             nameSection: 'قسم الدراجات النارية',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/الدراجات الهوائية.png',
+            pathImage: 'images/bicycle.svg',
             nameSection: 'قسم الدراجات الهوائية',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/السيارات.png',
+            pathImage: 'images/car.svg',
             nameSection: 'قسم السيارات',
             function: () {},
           ),
           SectionButton(
-            pathImage: 'images/الأجهزة الكهربائية.png',
+            pathImage: 'images/electric machines.svg',
             nameSection: 'قسم الأجهزة الكهربائية',
             function: () {},
           ),

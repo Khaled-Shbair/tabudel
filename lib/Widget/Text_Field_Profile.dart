@@ -18,6 +18,7 @@ class TextFieldProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: const Color(0XFF464698),
       keyboardType: keyboardType,
       style: TextStyle(
         fontSize: 12,
