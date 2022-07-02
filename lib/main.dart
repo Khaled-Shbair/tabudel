@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'AllPages.dart';
+import 'Screen/Account_Created_Successfully_Screen.dart';
 import 'Screen/Add_And_Buy_Screen.dart';
 import 'Screen/Add_Product_Screen.dart';
 import 'Screen/Added_Successfully_Screen.dart';
@@ -8,6 +9,7 @@ import 'Screen/Answer_Is_No_Screen.dart';
 import 'Screen/Deltial_Product_Screen.dart';
 import 'Screen/Department_Add_Product_Screen.dart';
 import 'Screen/Answer_Is_Yes_Screen.dart';
+import 'Screen/Departments_Products/Add_Information_Screen.dart';
 import 'Screen/Departments_Products/Computer_department_Screen.dart';
 import 'Screen/Departments_Products/Test.dart';
 import 'Screen/Detials_Service_Provide_Screen.dart';
@@ -44,9 +46,11 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/AnswerIsNoScreen',
+      initialRoute: '/AddInformationScreen',
       routes: {
         '/Home': (context) => const Home(),
+        '/AddInformationScreen': (context) => const AddInformationScreen(),
+        '/AccountCreatedSuccessfullyScreen': (context) => const AccountCreatedSuccessfullyScreen(),
         '/Test': (context) => const Test(),
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),
         '/AnswerIsNoScreen': (context) => const AnswerIsNoScreen(),
