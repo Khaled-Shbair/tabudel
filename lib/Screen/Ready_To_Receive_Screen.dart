@@ -69,7 +69,7 @@ class ReadyToReceiveScreen extends StatelessWidget {
                   color: const Color(0XFFF1F1F9),
                   function: () {
                     Navigator.pushReplacementNamed(
-                        context, '/ListProvideServiceScreen');
+                        context, '/AnswerIsNoScreen');
                   },
                 ),
               ],

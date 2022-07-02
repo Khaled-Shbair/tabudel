@@ -50,8 +50,7 @@ class AnswerIsYesScreen extends StatelessWidget {
               x: 50,
               y: 106,
               function: () {
-                Navigator.pushReplacementNamed(
-                    context, '/ListProvideServiceScreen');
+                Navigator.pushNamed(context, '/ListProvideServiceScreen');
               },
             ),
           ),

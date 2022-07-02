@@ -49,8 +49,7 @@ class WaitForPickupScreen extends StatelessWidget {
               x: 45,
               y: 106,
               function: () {
-                Navigator.pushReplacementNamed(
-                    context, '/ListProvideServiceScreen');
+                Navigator.pushNamed(context, '/ListProvideServiceScreen');
               },
             ),
           ),

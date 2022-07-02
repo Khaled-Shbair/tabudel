@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Widget/Button_AppBar.dart';
 import '../Widget/Buttons.dart';
 
 class DepartmentAddProductScreen extends StatefulWidget {
@@ -18,33 +17,19 @@ class _DepartmentAddProductScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        leadingWidth: 78,
-        leading: ButtonAppBar(
-          start: 40,
-          paddingStart: 5,
-          icon: Icons.arrow_back_ios,
-          function: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
       body: ListView(
         physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsetsDirectional.only(start: 37, end: 37, top: 30),
+        padding: const EdgeInsetsDirectional.only(start: 37, end: 37),
         children: [
-          const SizedBox(height: 48),
-          SvgPicture.asset('images/Add product.svg', height: 500),
           const SizedBox(height: 52),
+          SvgPicture.asset('images/Add product.svg', height: 450),
+          const SizedBox(height: 45),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 40,
-                width: 40,
+                height: 45,
+                width: 45,
                 decoration: BoxDecoration(
                   color: const Color(0XFF464698),
                   borderRadius: BorderRadius.circular(4),
@@ -60,8 +45,8 @@ class _DepartmentAddProductScreenState
                 colorFont: const Color(0XFF464698),
                 fontSize: 12,
                 color: const Color(0XFFF1F1F9),
-                x: 40,
-                y: 115,
+                x: 45,
+                y: 140,
                 function: () {
                   Navigator.pushNamed(context, '/AddProductScreen');
                 },

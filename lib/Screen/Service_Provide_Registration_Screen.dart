@@ -16,6 +16,7 @@ class ServiceProviderRegistrationScreen extends StatefulWidget {
 
 class _ServiceProviderRegistrationScreenState
     extends State<ServiceProviderRegistrationScreen> {
+  bool blur = false;
   List<City> city = <City>[
     City(name: 'غزة', id: 1),
     City(name: 'خانيونس', id: 2),
@@ -41,6 +42,7 @@ class _ServiceProviderRegistrationScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -85,6 +87,9 @@ class _ServiceProviderRegistrationScreenState
                       colorIcon: const Color(0XFF464698),
                       function: () {
                         personalPicture();
+                        setState(() {
+                          blur = true;
+                        });
                       },
                     ),
                   ),
