@@ -25,7 +25,7 @@ class MenuChoose extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:  EdgeInsetsDirectional.only(start: 20, end: paddingEnd),
+      padding: EdgeInsetsDirectional.only(start: 20, end: paddingEnd),
       width: double.infinity,
       decoration: BoxDecoration(
           color: const Color(0XFFF1F1F9),
@@ -33,7 +33,7 @@ class MenuChoose extends StatelessWidget {
       child: DropdownButton<String>(
         borderRadius: BorderRadius.circular(4),
         hint: Text(
-          nameFiled, // 'المدينة'
+          nameFiled,
           style: TextStyle(
             fontSize: 10,
             fontFamily: font,

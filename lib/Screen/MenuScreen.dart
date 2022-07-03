@@ -8,14 +8,14 @@ import 'List_Provide_Service_Screen.dart';
 import 'Logout_Screen.dart';
 import 'Successfully_Registered_As_Service_Provider_Screen.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class MenuScreen extends StatefulWidget {
+  const MenuScreen({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<MenuScreen> createState() => _MenuScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _MenuScreenState extends State<MenuScreen> {
   MenuItem currentItem = MenuItems.mainScreen;
 
   @override

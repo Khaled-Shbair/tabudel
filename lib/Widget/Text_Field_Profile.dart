@@ -28,7 +28,7 @@ class TextFieldProfile extends StatelessWidget {
       decoration: InputDecoration(
         contentPadding: const EdgeInsetsDirectional.only(
           top: 9,
-          bottom: 8,
+          bottom: 10,
           start: 20,
         ),
         suffixIcon: Icon(

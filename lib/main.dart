@@ -6,6 +6,7 @@ import 'Screen/Add_And_Buy_Screen.dart';
 import 'Screen/Add_Product_Screen.dart';
 import 'Screen/Added_Successfully_Screen.dart';
 import 'Screen/Answer_Is_No_Screen.dart';
+import 'Screen/Create_Account_Screen.dart';
 import 'Screen/Deltial_Product_Screen.dart';
 import 'Screen/Department_Add_Product_Screen.dart';
 import 'Screen/Answer_Is_Yes_Screen.dart';
@@ -15,9 +16,10 @@ import 'Screen/Departments_Products/Test.dart';
 import 'Screen/Detials_Service_Provide_Screen.dart';
 import 'Screen/Info_Screen.dart';
 import 'Screen/List_Provide_Service_Screen.dart';
+import 'Screen/Login_Screen.dart';
 import 'Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
-import 'Screen/Menus.dart';
+import 'Screen/MenuScreen.dart';
 import 'Screen/Notifications_Screen.dart';
 import 'Screen/Profile_Provide_Service_Screen.dart';
 import 'Screen/Ready_To_Receive_Screen.dart';
@@ -27,6 +29,7 @@ import 'Screen/Servic_Provide_Alter_Screen.dart';
 import 'Screen/Service_Provide_Registration_Screen.dart';
 import 'Screen/Splash_Screen.dart';
 import 'Screen/Wait_for_pickup_Screen.dart';
+import 'Security_Code_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,11 +49,15 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/AddInformationScreen',
+      initialRoute: '/SecurityCodeScreen',
       routes: {
-        '/Home': (context) => const Home(),
+        '/MenuScreen': (context) => const MenuScreen(),
+        '/SecurityCodeScreen': (context) => const SecurityCodeScreen(),
         '/AddInformationScreen': (context) => const AddInformationScreen(),
-        '/AccountCreatedSuccessfullyScreen': (context) => const AccountCreatedSuccessfullyScreen(),
+        '/CreateAccountScreen': (context) => const CreateAccountScreen(),
+        '/LoginScreen': (context) => const LoginScreen(),
+        '/AccountCreatedSuccessfullyScreen': (context) =>
+            const AccountCreatedSuccessfullyScreen(),
         '/Test': (context) => const Test(),
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),
         '/AnswerIsNoScreen': (context) => const AnswerIsNoScreen(),

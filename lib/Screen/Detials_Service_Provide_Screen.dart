@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../Widget/Buttons.dart';
 
@@ -185,7 +186,15 @@ class DetailServiceProvideScreen extends StatelessWidget {
                     y: double.infinity,
                     fontSize: 15,
                     name: 'اتصل',
-                    function: () {},
+                    function: () async {
+                      final Uri lanuchUri = Uri(
+                        scheme: 'tel',
+                        path: '0599724037',
+                      );
+                      if (await canLaunchUrlString(lanuchUri.toString())) {
+                        await launchUrlString(lanuchUri.toString());
+                      }
+                    },
                   ),
                 ),
               ],
