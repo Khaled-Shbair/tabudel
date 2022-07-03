@@ -16,6 +16,22 @@ class _AddProductScreenState extends State<AddProductScreen> {
   bool click2 = true;
   bool click3 = true;
   bool click4 = true;
+  late TextEditingController productNameEditingController;
+  late TextEditingController priceEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    productNameEditingController = TextEditingController();
+    priceEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    productNameEditingController.dispose();
+    priceEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -158,13 +174,17 @@ class _AddProductScreenState extends State<AddProductScreen> {
             ],
           ),
           const SizedBox(height: 30),
-          const TextFieldProfile(
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: productNameEditingController,
+            errorText: 'يرجى إدخال اسم السلعة',
             nameFiled: 'اسم السلعة',
           ),
           const SizedBox(height: 20),
-          const TextFieldProfile(
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: priceEditingController,
+            errorText: 'يرجى إدخال السعر',
             nameFiled: 'السعر',
           ),
           const SizedBox(height: 20),

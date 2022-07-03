@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class TextFieldProfile extends StatelessWidget {
   const TextFieldProfile({
     Key? key,
+    required this.textEditingController,
     required this.keyboardType,
     required this.nameFiled,
+     this.errorText='',
     this.suffixIcon = Icons.create,
     this.sizeSuffixIcon = 0,
   }) : super(key: key);
@@ -12,14 +14,17 @@ class TextFieldProfile extends StatelessWidget {
   final String font = 'HelveticaNeueLTArabic';
   final TextInputType keyboardType;
   final String nameFiled;
+  final String errorText;
   final IconData suffixIcon;
   final double sizeSuffixIcon;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       cursorColor: const Color(0XFF464698),
       keyboardType: keyboardType,
+      controller: textEditingController,
       style: TextStyle(
         fontSize: 12,
         fontFamily: font,
@@ -37,6 +42,14 @@ class TextFieldProfile extends StatelessWidget {
           color: const Color(0XFF464698),
         ),
         hintText: nameFiled,
+       // errorText: errorText,
+
+        // errorStyle: TextStyle(
+        //   fontSize: 12,
+        //   fontFamily: font,
+        //   height: 0,
+        //   color: const Color(0XFFD51818),
+        // ),
         hintStyle: TextStyle(
           fontSize: 10,
           fontFamily: font,

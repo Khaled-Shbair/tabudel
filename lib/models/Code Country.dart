@@ -1,6 +1,6 @@
 class CodeCountry {
-  final String codeCountry;
   final int id;
+  final String name;
 
-  CodeCountry({required this.codeCountry, required this.id});
+  CodeCountry({required this.name, required this.id});
 }

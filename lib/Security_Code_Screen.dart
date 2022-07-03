@@ -22,7 +22,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
   late FocusNode _secondFocusNode;
   late FocusNode _thirdFocusNode;
   late FocusNode _fourthFocusNode;
-  String _code = '';
+  String code = '';
 
   @override
   void initState() {
@@ -102,6 +102,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
                 width: 50,
                 child: TextFormField(
                   autofocus: true,
+                  enabled: true,
                   controller: _firstCodeTextController,
                   focusNode: _firstFocusNode,
                   onChanged: (String value) {
@@ -313,7 +314,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
   }
 
   void getCode() {
-    _code = _firstCodeTextController.text +
+    code = _firstCodeTextController.text +
         _secondCodeTextController.text +
         _thirdCodeTextController.text +
         _fourthCodeTextController.text;

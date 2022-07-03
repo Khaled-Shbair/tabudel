@@ -15,7 +15,6 @@ class AddInformationScreen extends StatefulWidget {
 }
 
 class _AddInformationScreenState extends State<AddInformationScreen> {
-  bool blur = false;
   List<City> city = <City>[
     City(name: 'غزة', id: 1),
     City(name: 'خانيونس', id: 2),
@@ -37,6 +36,23 @@ class _AddInformationScreenState extends State<AddInformationScreen> {
   String? selectedCityId;
   String? selectedAreaId;
   String font = 'HelveticaNeueLTArabic';
+  bool blur = false;
+  late TextEditingController firstNameEditingController;
+  late TextEditingController lastNameEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    firstNameEditingController = TextEditingController();
+    lastNameEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    firstNameEditingController.dispose();
+    lastNameEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +91,17 @@ class _AddInformationScreenState extends State<AddInformationScreen> {
         children: [
           SvgPicture.asset('images/Add Information.svg'),
           const SizedBox(height: 45),
-          const TextFieldProfile(
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: firstNameEditingController,
+            errorText: 'يرجى إدخال الاسم الأول',
             nameFiled: 'الاسم الأول',
           ),
           const SizedBox(height: 20),
-          const TextFieldProfile(
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: lastNameEditingController,
+            errorText: 'يرجى إدخال الاسم الأخير',
             nameFiled: 'الاسم الأخير',
           ),
           const SizedBox(height: 20),

@@ -38,6 +38,25 @@ class _ServiceProviderAlterScreenState
   String? selectedCityId;
   String? selectedAreaId;
   String font = 'HelveticaNeueLTArabic';
+  late TextEditingController _phoneEditingController;
+  late TextEditingController _nameEditingController;
+  late TextEditingController _workEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    _phoneEditingController = TextEditingController();
+    _nameEditingController = TextEditingController();
+    _workEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _phoneEditingController.dispose();
+    _nameEditingController.dispose();
+    _workEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,33 +125,31 @@ class _ServiceProviderAlterScreenState
               ),
             ],
           ),
-          const SizedBox(
-            height: 33,
-          ),
-          const TextFieldProfile(
+          const SizedBox(height: 33),
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: _nameEditingController,
             nameFiled: 'الاسم الكامل',
+            errorText: 'يرجى إدخال الاسم',
             sizeSuffixIcon: 20,
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
-            keyboardType: TextInputType.text,
+          const SizedBox(height: 20),
+          TextFieldProfile(
+            keyboardType: TextInputType.phone,
+            textEditingController: _nameEditingController,
             nameFiled: 'رقم الجوال',
+            errorText: 'يرجى إدخال رقم الجوال',
             sizeSuffixIcon: 20,
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
+          const SizedBox(height: 20),
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: _workEditingController,
             nameFiled: 'المهنة',
+            errorText: 'يرجى إدخال المهنة',
             sizeSuffixIcon: 20,
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           MenuChoose(
             function: (String? value) {
               if (value != null) {
@@ -148,9 +165,7 @@ class _ServiceProviderAlterScreenState
             list: city,
             nameFiled: 'المدينة',
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           MenuChoose(
             function: (String? value) {
               if (value != null) {
@@ -166,9 +181,7 @@ class _ServiceProviderAlterScreenState
             list: area,
             nameFiled: 'المنطقة / الشارع',
           ),
-          const SizedBox(
-            height: 30,
-          ),
+          const SizedBox(height: 30),
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
             child: Buttons(

@@ -5,7 +5,6 @@ import 'package:flutter_svg/svg.dart';
 import '../Widget/Buttons.dart';
 import '../Widget/Menu_Choose.dart';
 import '../Widget/Text_Field_Profile.dart';
-import '../models/City.dart';
 import '../models/Code Country.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,24 +16,13 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   List<CodeCountry> codeCountry = <CodeCountry>[
-    CodeCountry(codeCountry: 'خانيونس', id: 1),
-    CodeCountry(codeCountry: 'خانيونس', id: 2),
-    CodeCountry(codeCountry: 'خانيونس', id: 3),
-    CodeCountry(codeCountry: 'خانيونس', id: 4),
-    CodeCountry(codeCountry: 'خانيونس', id: 5),
+    CodeCountry(name: '970+', id: 1),
+    CodeCountry(name: '972+', id: 2),
   ];
+
   String? selectedCodeCountry;
   late TapGestureRecognizer _tapGestureRecognizer;
-
-  List<City> area = <City>[
-    City(name: 'غزة', id: 1),
-    City(name: 'خانيونس', id: 2),
-    City(name: 'رفع', id: 3),
-    City(name: 'النصيرات', id: 4),
-    City(name: 'دير البلح', id: 5),
-    City(name: 'المغازي', id: 6),
-    City(name: 'الزهرة', id: 7),
-  ];
+  late TextEditingController _phoneEditingController;
 
   void _navigatorToCreateScreen() =>
       Navigator.pushNamed(context, '/CreateAccountScreen');
@@ -42,12 +30,14 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
+    _phoneEditingController = TextEditingController();
     _tapGestureRecognizer = TapGestureRecognizer()
       ..onTap = _navigatorToCreateScreen;
   }
 
   @override
   void dispose() {
+    _phoneEditingController.dispose();
     _tapGestureRecognizer.dispose();
     super.dispose();
   }
@@ -80,28 +70,35 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: const TextFieldProfile(
+                  flex: 2,
+                  child: TextFieldProfile(
                     keyboardType: TextInputType.phone,
+                    textEditingController: _phoneEditingController,
+                    errorText: 'يرجى إدخال الرقم بشكل صحيح',
                     nameFiled: 'أدخل رقمك الهاتفي',
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: MenuChoose(
+                    function: (String? value) {
+                      if (value != null) {
+                        setState(() {
+                          selectedCodeCountry = value;
+                        });
+                      }
+                    },
+                    paddingEnd: 10,
+                    paddingStart: 10,
+                    marginEnd: 30,
+                    selectedId: selectedCodeCountry,
+                    list: codeCountry,
+                    nameFiled: codeCountry[0].name,
                   ),
                 ),
               ],
             ),
           ),
-        
-          // MenuChoose(
-          //   function: (String? value) {
-          //     if (value != null) {
-          //       setState(() {
-          //         selectedCodeCountry = value;
-          //       });
-          //     }
-          //   },
-          //   selectedId: selectedCodeCountry,
-          //   list: codeCountry,
-          //   nameFiled: 'رقم الهاتف',
-          //
-          // ),
           Padding(
             padding: const EdgeInsetsDirectional.only(
               start: 20,

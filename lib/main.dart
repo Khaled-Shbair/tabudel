@@ -49,32 +49,45 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/SecurityCodeScreen',
+      initialRoute: '/LoginScreen',
       routes: {
-        '/MenuScreen': (context) => const MenuScreen(),
-        '/SecurityCodeScreen': (context) => const SecurityCodeScreen(),
-        '/AddInformationScreen': (context) => const AddInformationScreen(),
-        '/CreateAccountScreen': (context) => const CreateAccountScreen(),
-        '/LoginScreen': (context) => const LoginScreen(),
-        '/AccountCreatedSuccessfullyScreen': (context) =>
-            const AccountCreatedSuccessfullyScreen(),
         '/Test': (context) => const Test(),
+        //////////////////////////////////////////////////////////////////
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),
-        '/AnswerIsNoScreen': (context) => const AnswerIsNoScreen(),
+        '/AddProductScreen': (context) => const AddProductScreen(),
         '/DetailProductScreen': (context) => const DetailProductScreen(),
         '/DepartmentAddProductScreen': (context) =>
             const DepartmentAddProductScreen(),
-        '/AddedSuccessfullyScreen': (context) =>
-            const AddedSuccessfullyScreen(),
-        '/AddProductScreen': (context) => const AddProductScreen(),
         '/ComputerDepartmentScreen': (context) =>
             const ComputerDepartmentScreen(),
+        //////////////////////////////////////////////////////////////////
+        '/WaitForPickupScreen': (context) => const WaitForPickupScreen(),
         '/AnswerIsYesScreen': (context) => const AnswerIsYesScreen(),
         '/ReadyToReceiveScreen': (context) => const ReadyToReceiveScreen(),
-        '/WaitForPickupScreen': (context) => const WaitForPickupScreen(),
+        '/AnswerIsNoScreen': (context) => const AnswerIsNoScreen(),
+
+        '/AddedSuccessfullyScreen': (context) =>
+            const AddedSuccessfullyScreen(),
+        //////////////////////////////////////////////////////////////////
         '/AllPages': (context) => const AllPages(),
-        '/DetailServiceProvideScreen': (context) =>
-            const DetailServiceProvideScreen(),
+        '/MainScreen': (context) => const MainScreen(),
+        '/MenuScreen': (context) => const MenuScreen(),
+        //////////////////////////////////////////////////////////////////
+        '/CreateAccountScreen': (context) => const CreateAccountScreen(),
+        '/LoginScreen': (context) => const LoginScreen(),
+        '/SecurityCodeScreen': (context) => const SecurityCodeScreen(),
+        '/AddInformationScreen': (context) => const AddInformationScreen(),
+        '/SplashScreen': (context) => const SplashScreen(),
+        '/AccountCreatedSuccessfullyScreen': (context) =>
+            const AccountCreatedSuccessfullyScreen(),
+        //////////////////////////////////////////////////////////////////
+        '/NotificationsScreen': (context) => const NotificationsScreen(),
+        '/ProfileScreen': (context) => const ProfileScreen(),
+        '/LogoutScreen': (context) => const LogoutScreen(),
+        '/InfoScreen': (context) => const InfoScreen(),
+        //////////////////////////////////////////////////////////////////
+        '/ServiceProviderRegistrationScreen': (context) =>
+            const ServiceProviderRegistrationScreen(),
         '/ProvideService': (context) =>
             const SuccessfullyRegisteredAsServiceProviderScreen(),
         '/ListProvideServiceScreen': (context) =>
@@ -83,14 +96,8 @@ class MyApp extends StatelessWidget {
             const ServiceProviderAlterScreen(),
         '/ProfileProvideServiceScreen': (context) =>
             const ProfileProvideServiceScreen(),
-        '/MainScreen': (context) => const MainScreen(),
-        '/NotificationsScreen': (context) => const NotificationsScreen(),
-        '/ProfileScreen': (context) => const ProfileScreen(),
-        '/LogoutScreen': (context) => const LogoutScreen(),
-        '/InfoScreen': (context) => const InfoScreen(),
-        '/SplashScreen': (context) => const SplashScreen(),
-        '/ServiceProviderRegistrationScreen': (context) =>
-            const ServiceProviderRegistrationScreen(),
+        '/DetailServiceProvideScreen': (context) =>
+            const DetailServiceProvideScreen(),
       },
     );
   }

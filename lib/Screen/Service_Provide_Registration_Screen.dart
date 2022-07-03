@@ -16,7 +16,6 @@ class ServiceProviderRegistrationScreen extends StatefulWidget {
 
 class _ServiceProviderRegistrationScreenState
     extends State<ServiceProviderRegistrationScreen> {
-  bool blur = false;
   List<City> city = <City>[
     City(name: 'غزة', id: 1),
     City(name: 'خانيونس', id: 2),
@@ -37,7 +36,29 @@ class _ServiceProviderRegistrationScreenState
   ];
   String? selectedCityId;
   String? selectedAreaId;
+  bool blur = false;
+
   String font = 'HelveticaNeueLTArabic';
+  late TextEditingController _phoneEditingController;
+  late TextEditingController _nameEditingController;
+
+  late TextEditingController _workEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    _phoneEditingController = TextEditingController();
+    _nameEditingController = TextEditingController();
+    _workEditingController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _phoneEditingController.dispose();
+    _nameEditingController.dispose();
+    _workEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -97,30 +118,28 @@ class _ServiceProviderRegistrationScreenState
               ),
             ],
           ),
-          const SizedBox(
-            height: 28.4,
-          ),
-          const TextFieldProfile(
+          const SizedBox(height: 28.4),
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: _nameEditingController,
+            errorText: 'يرجى إدخال الاسم',
             nameFiled: 'الاسم الكامل',
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
-            keyboardType: TextInputType.text,
+          const SizedBox(height: 20),
+          TextFieldProfile(
+            keyboardType: TextInputType.phone,
+            textEditingController: _phoneEditingController,
+            errorText: 'يرجى إدخال رقم الجوال',
             nameFiled: 'رقم الجوال',
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          const TextFieldProfile(
+          const SizedBox(height: 20),
+          TextFieldProfile(
             keyboardType: TextInputType.text,
+            textEditingController: _workEditingController,
+            errorText: 'يرجى إدخال المهنة',
             nameFiled: 'المهنة',
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           MenuChoose(
             function: (String? value) {
               if (value != null) {
@@ -133,9 +152,7 @@ class _ServiceProviderRegistrationScreenState
             list: city,
             nameFiled: 'المدينة',
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           MenuChoose(
             function: (String? value) {
               if (value != null) {
@@ -148,9 +165,7 @@ class _ServiceProviderRegistrationScreenState
             list: area,
             nameFiled: 'المنطقة / الشارع',
           ),
-          const SizedBox(
-            height: 30,
-          ),
+          const SizedBox(height: 30),
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
             child: Buttons(

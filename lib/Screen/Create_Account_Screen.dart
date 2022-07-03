@@ -69,8 +69,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               x: 45,
               y: double.infinity,
               function: () {
-                Navigator.pushNamed(
-                    context, '/AccountCreatedSuccessfullyScreen');
+                Navigator.pushNamed(context, '/SecurityCodeScreen');
               },
             ),
           ),
