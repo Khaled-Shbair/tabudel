@@ -13,6 +13,7 @@ import 'Screen/Answer_Is_Yes_Screen.dart';
 import 'Screen/Departments_Products/Add_Information_Screen.dart';
 import 'Screen/Departments_Products/Computer_department_Screen.dart';
 import 'Screen/Departments_Products/Test.dart';
+import 'Screen/Departments_Products/new.dart';
 import 'Screen/Detials_Service_Provide_Screen.dart';
 import 'Screen/Info_Screen.dart';
 import 'Screen/List_Provide_Service_Screen.dart';
@@ -21,6 +22,8 @@ import 'Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/MenuScreen.dart';
 import 'Screen/Notifications_Screen.dart';
+import 'Screen/On_Boarding 2_Screen.dart';
+import 'Screen/On_Boarding1_Screen.dart';
 import 'Screen/Profile_Provide_Service_Screen.dart';
 import 'Screen/Ready_To_Receive_Screen.dart';
 import 'Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
@@ -49,9 +52,12 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/LoginScreen',
+      initialRoute: '/OnBoarding2Screen',
       routes: {
-        '/Test': (context) => const Test(),
+        '/Test': (context) => const Test(), //Test
+        '/SSS': (context) => const SSS(), //Test
+        '/OnBoarding2Screen': (context) => const OnBoarding2Screen(),
+        '/OnBoarding1Screen': (context) => const OnBoarding1Screen(),
         //////////////////////////////////////////////////////////////////
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),
         '/AddProductScreen': (context) => const AddProductScreen(),
