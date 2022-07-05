@@ -7,8 +7,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Widget/Button_AppBar.dart';
-import '../Widget/Buttons.dart';
+import '../../Widget/Button_AppBar.dart';
+import '../../Widget/Buttons.dart';
 
 class SuccessfullyRegisteredAsServiceProviderScreen extends StatelessWidget {
   const SuccessfullyRegisteredAsServiceProviderScreen({Key? key})

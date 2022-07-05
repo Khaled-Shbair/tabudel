@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../Widget/Buttons.dart';
+import '../../Widget/Buttons.dart';
 
 class DetailServiceProvideScreen extends StatelessWidget {
   const DetailServiceProvideScreen({Key? key}) : super(key: key);

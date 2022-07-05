@@ -9,37 +9,21 @@ class OnBoarding2Screen extends StatefulWidget {
   State<OnBoarding2Screen> createState() => _OnBoarding2ScreenState();
 }
 
-class _OnBoarding2ScreenState extends State<OnBoarding2Screen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class _OnBoarding2ScreenState extends State<OnBoarding2Screen> {
   @override
   Widget build(BuildContext context) {
-    _controller.forward();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsetsDirectional.only(
-            start: 37, end: 37, top: 50, bottom: 50),
+          start: 37,
+          end: 37,
+          top: 50,
+          bottom: 50,
+        ),
         child: Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
-            SvgPicture.asset(
-              'images/on boarding 1/logoTitle.svg',
-              height: 40,
-            ),
+            SvgPicture.asset('images/on boarding 1/logoTitle.svg', height: 40),
             const ImageTwoWidget(),
             Padding(
               padding: const EdgeInsetsDirectional.only(top: 150),
@@ -122,7 +106,7 @@ class TextTwoWidget extends StatelessWidget {
         child: Align(
           alignment: AlignmentDirectional.bottomCenter,
           child: FadeInUp(
-            delay: const Duration(seconds: 4),
+            delay: const Duration(seconds: 3),
             child: const Text(
               'نتبع سياسة توصيل آمنة تضمن وصول\nالسلعة لباب منزلك خلال 24 ساعة أو أقل',
               textAlign: TextAlign.center,
@@ -146,7 +130,8 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInLeft(
-      delay: const Duration(seconds: 3),
+      from: 80,
+      delay: const Duration(milliseconds: 3250),
       child: Align(
         alignment: AlignmentDirectional.bottomStart,
         child: FloatingActionButton(
@@ -171,7 +156,7 @@ class SliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 2),
       from: 20,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(start: 150, bottom: 100),

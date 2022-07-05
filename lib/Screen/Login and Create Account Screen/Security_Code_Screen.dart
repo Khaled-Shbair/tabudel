@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../Widget/Button_AppBar.dart';
 import '../../Widget/Buttons.dart';
+import '../../Widget/Filed_Code.dart';
 
 class SecurityCodeScreen extends StatefulWidget {
   const SecurityCodeScreen({Key? key}) : super(key: key);
@@ -101,174 +102,50 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 50,
-                child: TextFormField(
-                  autofocus: true,
-                  enabled: true,
-                  controller: _firstCodeTextController,
-                  focusNode: _firstFocusNode,
-                  onChanged: (String value) {
-                    if (value.isNotEmpty) {
-                      _secondFocusNode.requestFocus();
-                    }
-                  },
-                  keyboardType: TextInputType.number,
-                  cursorColor: const Color(0XFF464698),
-                  style: const TextStyle(
-                    color: Color(0XFF464698),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLength: 1,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    counterText: '',
-                    hintText: '-',
-                    hintStyle: const TextStyle(
-                      color: Color(0XFF464698),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    contentPadding: const EdgeInsetsDirectional.only(
-                      top: 15,
-                      bottom: 10,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: const Color(0XFFF1F1F9),
-                    filled: true,
-                  ),
-                ),
+              FiledCode(
+                textEditingController: _firstCodeTextController,
+                focusNode: _firstFocusNode,
+                onChanged: (String value) {
+                  if (value.isNotEmpty) {
+                    _secondFocusNode.requestFocus();
+                  }
+                },
               ),
               const SizedBox(width: 10),
-              SizedBox(
-                width: 50,
-                child: TextFormField(
-                  controller: _secondCodeTextController,
-                  focusNode: _secondFocusNode,
-                  onChanged: (String value) {
-                    if (value.isNotEmpty) {
-                      _thirdFocusNode.requestFocus();
-                    } else {
-                      _firstFocusNode.requestFocus();
-                    }
-                  },
-                  keyboardType: TextInputType.number,
-                  cursorColor: const Color(0XFF464698),
-                  style: const TextStyle(
-                    color: Color(0XFF464698),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLength: 1,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    counterText: '',
-                    hintText: '-',
-                    hintStyle: const TextStyle(
-                      color: Color(0XFF464698),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    contentPadding: const EdgeInsetsDirectional.only(
-                      top: 15,
-                      bottom: 10,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: const Color(0XFFF1F1F9),
-                    filled: true,
-                  ),
-                ),
+              FiledCode(
+                textEditingController: _secondCodeTextController,
+                focusNode: _secondFocusNode,
+                onChanged: (String value) {
+                  if (value.isNotEmpty) {
+                    _thirdFocusNode.requestFocus();
+                  } else {
+                    _firstFocusNode.requestFocus();
+                  }
+                },
               ),
               const SizedBox(width: 10),
-              SizedBox(
-                width: 50,
-                child: TextFormField(
-                  controller: _thirdCodeTextController,
-                  focusNode: _thirdFocusNode,
-                  onChanged: (String value) {
-                    if (value.isNotEmpty) {
-                      _fourthFocusNode.requestFocus();
-                    } else {
-                      _thirdFocusNode.requestFocus();
-                    }
-                  },
-                  keyboardType: TextInputType.number,
-                  cursorColor: const Color(0XFF464698),
-                  style: const TextStyle(
-                    color: Color(0XFF464698),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLength: 1,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    counterText: '',
-                    hintText: '-',
-                    hintStyle: const TextStyle(
-                      color: Color(0XFF464698),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    contentPadding: const EdgeInsetsDirectional.only(
-                      top: 15,
-                      bottom: 10,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: const Color(0XFFF1F1F9),
-                    filled: true,
-                  ),
-                ),
+              FiledCode(
+                textEditingController: _thirdCodeTextController,
+                focusNode: _thirdFocusNode,
+                onChanged: (String value) {
+                  if (value.isNotEmpty) {
+                    _fourthFocusNode.requestFocus();
+                  } else {
+                    _secondFocusNode.requestFocus();
+                  }
+                },
               ),
               const SizedBox(width: 10),
-              SizedBox(
-                width: 50,
-                child: TextFormField(
-                  controller: _fourthCodeTextController,
-                  focusNode: _fourthFocusNode,
-                  onChanged: (String value) {
-                    if (value.isEmpty) {
-                      _thirdFocusNode.requestFocus();
-                    }
-                  },
-                  keyboardType: TextInputType.number,
-                  cursorColor: const Color(0XFF464698),
-                  style: const TextStyle(
-                    color: Color(0XFF464698),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  maxLength: 1,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    counterText: '',
-                    hintText: '-',
-                    hintStyle: const TextStyle(
-                      color: Color(0XFF464698),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    contentPadding: const EdgeInsetsDirectional.only(
-                      top: 15,
-                      bottom: 10,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: const Color(0XFFF1F1F9),
-                    filled: true,
-                  ),
-                ),
+              FiledCode(
+                textEditingController: _fourthCodeTextController,
+                focusNode: _fourthFocusNode,
+                onChanged: (String value) {
+                  if (value.isEmpty) {
+                    _thirdFocusNode.requestFocus();
+                  } else {
+                    _performResetCode();
+                  }
+                },
               ),
             ],
           ),
@@ -293,16 +170,9 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
   }
 
   Future<void> _performResetCode() async {
-    if (_checkData()) {
+    if (_checkCode()) {
       await _resetCode();
     }
-  }
-
-  bool _checkData() {
-    if (_checkCode()) {
-      return true;
-    }
-    return false;
   }
 
   bool _checkCode() {
@@ -313,6 +183,22 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
       getCode();
       return true;
     }
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'يرجى إدخال الرمز بشكل صحيح',
+          style: TextStyle(
+            fontSize: 12,
+            fontFamily: 'HelveticaLTArabic',
+            color: Color(0XFFD51818),
+          ),
+        ),
+        padding: EdgeInsetsDirectional.only(bottom: 300, start: 50),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
     return false;
   }
 
@@ -323,5 +209,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
         _fourthCodeTextController.text;
   }
 
-  Future<void> _resetCode() async {}
+  Future<void> _resetCode() async {
+    Navigator.pushReplacementNamed(context, '/AddInformationScreen');
+  }
 }

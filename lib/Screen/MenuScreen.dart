@@ -4,9 +4,9 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import '../AllPages.dart';
 import '../Widget/Button_AppBar.dart';
 import 'Info_Screen.dart';
-import 'List_Provide_Service_Screen.dart';
-import 'Logout_Screen.dart';
-import 'Successfully_Registered_As_Service_Provider_Screen.dart';
+import 'Provide_Service_Screen/List_Provide_Service_Screen.dart';
+import 'Login and Create Account Screen/Logout_Screen.dart';
+import 'Provide_Service_Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
 
 class MenuScreen extends StatefulWidget {
   const MenuScreen({Key? key}) : super(key: key);

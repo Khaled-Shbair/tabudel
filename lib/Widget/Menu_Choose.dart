@@ -12,6 +12,7 @@ class MenuChoose extends StatelessWidget {
     this.paddingEnd = 20,
     this.paddingStart = 20,
     this.marginEnd = 0,
+    this.fontSize = 10,
   }) : super(key: key);
 
   final String font = 'HelveticaLTArabic';
@@ -23,6 +24,7 @@ class MenuChoose extends StatelessWidget {
   final double paddingEnd;
   final double paddingStart;
   final double marginEnd;
+  final double fontSize;
 
   final Function(String? value) function;
 
@@ -40,9 +42,9 @@ class MenuChoose extends StatelessWidget {
         hint: Text(
           nameFiled,
           style: TextStyle(
-            fontSize: 10,
+            fontSize: fontSize,
             fontFamily: font,
-            color: const Color(0XFF464698).withAlpha(204),
+            color: const Color(0XFF464698),
           ),
         ),
         menuMaxHeight: 150,
@@ -55,9 +57,9 @@ class MenuChoose extends StatelessWidget {
         ),
         dropdownColor: const Color(0XFFF1F1F9),
         style: TextStyle(
-          fontSize: 10,
+          fontSize: fontSize,
           fontFamily: font,
-          color: const Color(0XFF464698).withAlpha(204),
+          color: const Color(0XFF464698),
         ),
         elevation: 0,
         value: selectedId,

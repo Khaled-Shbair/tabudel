@@ -12,23 +12,23 @@ import 'Screen/Department_Add_Product_Screen.dart';
 import 'Screen/Answer_Is_Yes_Screen.dart';
 import 'Screen/Login and Create Account Screen/Add_Information_Screen.dart';
 import 'Screen/Departments_Products/Computer_department_Screen.dart';
-import 'Screen/Details_Service_Provide_Screen.dart';
+import 'Screen/Provide_Service_Screen/Details_Service_Provide_Screen.dart';
 import 'Screen/Info_Screen.dart';
-import 'Screen/List_Provide_Service_Screen.dart';
+import 'Screen/Provide_Service_Screen/List_Provide_Service_Screen.dart';
 import 'Screen/Login and Create Account Screen/Login_Screen.dart';
-import 'Screen/Logout_Screen.dart';
+import 'Screen/Login and Create Account Screen/Logout_Screen.dart';
 import 'Screen/Main_Screen.dart';
 import 'Screen/MenuScreen.dart';
 import 'Screen/Notifications_Screen.dart';
-import 'Screen/On_Boarding 2_Screen.dart';
-import 'Screen/On_Boarding1_Screen.dart';
-import 'Screen/Profile_Provide_Service_Screen.dart';
+import 'Screen/Splash_Screen/On_Boarding 2_Screen.dart';
+import 'Screen/Splash_Screen/On_Boarding1_Screen.dart';
+import 'Screen/Provide_Service_Screen/Profile_Provide_Service_Screen.dart';
 import 'Screen/Ready_To_Receive_Screen.dart';
-import 'Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
-import 'Screen/Provide_Service.dart';
-import 'Screen/Service_Provide_Alter_Screen.dart';
-import 'Screen/Service_Provide_Registration_Screen.dart';
-import 'Screen/Splash_Screen.dart';
+import 'Screen/Provide_Service_Screen/Successfully_Registered_As_Service_Provider_Screen.dart';
+import 'Screen/Provide_Service_Screen/Provide_Service.dart';
+import 'Screen/Provide_Service_Screen/Service_Provide_Alter_Screen.dart';
+import 'Screen/Provide_Service_Screen/Service_Provide_Registration_Screen.dart';
+import 'Screen/Splash_Screen/Splash_Screen.dart';
 import 'Screen/Wait_for_pickup_Screen.dart';
 import 'Screen/Login and Create Account Screen/Security_Code_Screen.dart';
 
@@ -50,7 +50,8 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
-      initialRoute: '/OnBoarding1Screen',
+      //initialRoute: '/SplashScreen',
+      initialRoute: '/CreateAccountScreen',
       routes: {
         //////////////////////////////////////////////////////////////////
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),

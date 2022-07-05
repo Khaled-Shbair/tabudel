@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../Widget/Button_AppBar.dart';
-import '../Widget/Buttons.dart';
-import '../Widget/Circle_Button.dart';
-import '../Widget/Menu_Choose.dart';
-import '../Widget/Text_Field_Profile.dart';
-import '../models/City.dart';
+import '../../Widget/Buttons.dart';
+import '../../Widget/Circle_Button.dart';
+import '../../Widget/Menu_Choose.dart';
+import '../../Widget/Text_Field_Profile.dart';
+import '../../models/City.dart';
 
-class ServiceProviderAlterScreen extends StatefulWidget {
-  const ServiceProviderAlterScreen({Key? key}) : super(key: key);
+class ServiceProviderRegistrationScreen extends StatefulWidget {
+  const ServiceProviderRegistrationScreen({Key? key}) : super(key: key);
 
   @override
-  State<ServiceProviderAlterScreen> createState() =>
-      _ServiceProviderAlterScreenState();
+  State<ServiceProviderRegistrationScreen> createState() =>
+      _ServiceProviderRegistrationScreenState();
 }
 
-class _ServiceProviderAlterScreenState
-    extends State<ServiceProviderAlterScreen> {
+class _ServiceProviderRegistrationScreenState
+    extends State<ServiceProviderRegistrationScreen> {
   List<City> city = <City>[
     City(name: 'غزة', id: 1),
     City(name: 'خانيونس', id: 2),
@@ -37,9 +36,12 @@ class _ServiceProviderAlterScreenState
   ];
   String? selectedCityId;
   String? selectedAreaId;
+  bool blur = false;
+
   String font = 'HelveticaLTArabic';
   late TextEditingController _phoneEditingController;
   late TextEditingController _nameEditingController;
+
   late TextEditingController _workEditingController;
 
   @override
@@ -66,20 +68,10 @@ class _ServiceProviderAlterScreenState
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leadingWidth: 60,
-        leading: ButtonAppBar(
-          start: 25,
-          paddingStart: 15,
-          icon: Icons.arrow_back_ios,
-          size: 15,
-          function: () {
-            Navigator.pop(context);
-          },
-        ),
         title: Text(
-          'تعديل الملف الشخصي(مزود خدمة)',
+          'تسجيل كمزود خدمة',
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
             fontFamily: font,
             color: const Color(0XFF464698),
@@ -88,8 +80,8 @@ class _ServiceProviderAlterScreenState
       ),
       body: ListView(
         padding: const EdgeInsetsDirectional.only(
+          top: 27,
           start: 37,
-          top: 20,
           end: 37,
         ),
         physics: const NeverScrollableScrollPhysics(),
@@ -100,54 +92,52 @@ class _ServiceProviderAlterScreenState
               Stack(
                 alignment: AlignmentDirectional.bottomStart,
                 children: [
-                  Container(
-                    height: 170,
-                    width: 300,
-                    color: const Color(0XFFF1F1F9),
-                    child: const Icon(
-                      Icons.person,
-                      size: 80,
-                      color: Color(0XFF464698),
-                    ),
+                  const CircleAvatar(
+                    radius: 75,
+                    backgroundImage: AssetImage('images/saja.jpg'),
                   ),
-                  CircleButton(
-                    height: 35,
-                    width: 35,
-                    color: const Color(0XFF464698),
-                    icon: Icons.camera_alt,
-                    sizeIcon: 18,
-                    colorIcon: Colors.white,
-                    function: () {
-                      personalPicture();
-                    },
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.only(start: 10, bottom: 5),
+                    child: CircleButton(
+                      height: 30,
+                      width: 30,
+                      color: Colors.white,
+                      icon: Icons.camera_alt,
+                      sizeIcon: 15,
+                      colorIcon: const Color(0XFF464698),
+                      function: () {
+                        personalPicture();
+                        setState(() {
+                          blur = true;
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 33),
+          const SizedBox(height: 28.4),
           TextFieldProfile(
             keyboardType: TextInputType.text,
             textEditingController: _nameEditingController,
-            nameFiled: 'الاسم الكامل',
             errorText: 'يرجى إدخال الاسم',
-            sizeSuffixIcon: 20,
+            nameFiled: 'الاسم الكامل',
           ),
           const SizedBox(height: 20),
           TextFieldProfile(
             keyboardType: TextInputType.phone,
-            textEditingController: _nameEditingController,
-            nameFiled: 'رقم الجوال',
+            textEditingController: _phoneEditingController,
             errorText: 'يرجى إدخال رقم الجوال',
-            sizeSuffixIcon: 20,
+            nameFiled: 'رقم الجوال',
           ),
           const SizedBox(height: 20),
           TextFieldProfile(
             keyboardType: TextInputType.text,
             textEditingController: _workEditingController,
-            nameFiled: 'المهنة',
             errorText: 'يرجى إدخال المهنة',
-            sizeSuffixIcon: 20,
+            nameFiled: 'المهنة',
           ),
           const SizedBox(height: 20),
           MenuChoose(
@@ -159,9 +149,6 @@ class _ServiceProviderAlterScreenState
               }
             },
             selectedId: selectedCityId,
-            icon: Icons.create,
-            size: 20,
-            paddingEnd: 15,
             list: city,
             nameFiled: 'المدينة',
           ),
@@ -174,9 +161,6 @@ class _ServiceProviderAlterScreenState
                 });
               }
             },
-            icon: Icons.create,
-            size: 20,
-            paddingEnd: 15,
             selectedId: selectedAreaId,
             list: area,
             nameFiled: 'المنطقة / الشارع',
@@ -185,12 +169,11 @@ class _ServiceProviderAlterScreenState
           Padding(
             padding: const EdgeInsetsDirectional.only(start: 20, end: 20),
             child: Buttons(
-              name: 'حفظ',
+              name: 'تسجيل',
               x: 45,
               y: double.infinity,
               function: () {
-                Navigator.pushReplacementNamed(
-                    context, '/ProfileProvideServiceScreen');
+                Navigator.pushReplacementNamed(context, '/ProvideService');
               },
             ),
           ),
@@ -201,7 +184,7 @@ class _ServiceProviderAlterScreenState
 
   void personalPicture() {
     showModalBottomSheet(
-      barrierColor: Colors.white.withAlpha(220),
+      barrierColor: Colors.white.withAlpha(128),
       backgroundColor: Colors.transparent,
       elevation: 0,
       context: context,

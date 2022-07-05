@@ -69,37 +69,36 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 270,
           ),
           const SizedBox(height: 67),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: TextFieldProfile(
-                    keyboardType: TextInputType.phone,
-                    textEditingController: _phoneEditingController,
-                    errorText: 'يرجى إدخال الرقم بشكل صحيح',
-                    nameFiled: 'أدخل رقمك الهاتفي',
-                  ),
+          Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: TextFieldProfile(
+                  keyboardType: TextInputType.phone,
+                  textEditingController: _phoneEditingController,
+                  nameFiled: 'أدخل رقمك الهاتفي',
                 ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: MenuChoose(
-                    function: (String? value) {
-                      if (value != null) {
-                        setState(() {
-                          selectedCodeCountry = value;
-                        });
-                      }
-                    },
-                    paddingEnd: 10,
-                    paddingStart: 10,
-                    selectedId: selectedCodeCountry,
-                    list: codeCountry,
-                    nameFiled: codeCountry[0].name,
-                  ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                flex: 1,
+                child: MenuChoose(
+                  function: (String? value) {
+                    if (value != null) {
+                      setState(() {
+                        selectedCodeCountry = value;
+                      });
+                    }
+                  },
+                  paddingEnd: 10,
+                  fontSize: 15,
+                  paddingStart: 10,
+                  selectedId: selectedCodeCountry,
+                  list: codeCountry,
+                  nameFiled: codeCountry[0].name,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsetsDirectional.only(
@@ -112,9 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
               name: 'تسجيل دخول',
               x: 45,
               y: double.infinity,
-              function: () {
-                Navigator.pushReplacementNamed(context, '/MenuScreen');
-              },
+              function: () => _performResetCode(),
             ),
           ),
           Padding(
@@ -147,5 +144,38 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _performResetCode() async {
+    if (_checkData()) {
+      await _login();
+    }
+  }
+
+  bool _checkData() {
+    if (_phoneEditingController.text.isNotEmpty) {
+      return true;
+    }
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'يرجى إدخال الرقم بشكل صحيح',
+          style: TextStyle(
+            fontSize: 12,
+            fontFamily: 'HelveticaLTArabic',
+            color: Color(0XFFD51818),
+          ),
+        ),
+        padding: EdgeInsetsDirectional.only(bottom: 300, start: 50),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+    return false;
+  }
+
+  Future<void> _login() async {
+    Navigator.pushReplacementNamed(context, '/MenuScreen');
   }
 }

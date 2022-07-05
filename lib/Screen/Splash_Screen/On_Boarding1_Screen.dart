@@ -55,7 +55,7 @@ class PhoneOneWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SlideInDown(
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 2),
       from: 20,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(bottom: 320, start: 190),

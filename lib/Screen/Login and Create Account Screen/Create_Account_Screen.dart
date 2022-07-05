@@ -74,11 +74,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             child: Row(
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: TextFieldProfile(
                     keyboardType: TextInputType.phone,
                     textEditingController: _phoneEditingController,
-                    errorText: 'يرجى إدخال الرقم بشكل صحيح',
                     nameFiled: 'أدخل رقمك الهاتفي',
                   ),
                 ),
@@ -93,6 +92,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       }
                     },
                     paddingEnd: 10,
+                    fontSize: 15,
                     paddingStart: 10,
                     selectedId: selectedCodeCountry,
                     list: codeCountry,
@@ -113,9 +113,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               name: 'إنشاء حساب',
               x: 45,
               y: double.infinity,
-              function: () {
-                Navigator.pushNamed(context, '/SecurityCodeScreen');
-              },
+              function: () => _performLogin(),
             ),
           ),
           Padding(
@@ -148,5 +146,38 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _performLogin() async {
+    if (_checkData()) {
+      await _login();
+    }
+  }
+
+  bool _checkData() {
+    if (_phoneEditingController.text.isNotEmpty) {
+      return true;
+    }
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text(
+          'يرجى إدخال الرقم بشكل صحيح',
+          style: TextStyle(
+            fontSize: 12,
+            fontFamily: 'HelveticaLTArabic',
+            color: Color(0XFFD51818),
+          ),
+        ),
+        padding: EdgeInsetsDirectional.only(bottom: 330, start: 40),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+    return false;
+  }
+
+  Future<void> _login() async {
+    Navigator.pushReplacementNamed(context, '/SecurityCodeScreen');
   }
 }
