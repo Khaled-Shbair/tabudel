@@ -29,7 +29,7 @@ class AddedSuccessfullyScreen extends StatelessWidget {
         padding: const EdgeInsetsDirectional.only(start: 60, end: 60, top: 100),
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          SvgPicture.asset('images/Checking boxes-cuate (1).svg',
+          SvgPicture.asset('images/Checking boxes.svg',
               fit: BoxFit.fitWidth, height: 300),
           const SizedBox(height: 45),
           const Text(
@@ -38,7 +38,7 @@ class AddedSuccessfullyScreen extends StatelessWidget {
             style: TextStyle(
               height: 1.8,
               fontSize: 18,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
               color: Color(0XFF292959),
             ),
           ),

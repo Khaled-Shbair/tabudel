@@ -18,7 +18,7 @@ class DetailProductScreen extends StatelessWidget {
           'تفاصيل السلعة',
           style: TextStyle(
             fontSize: 20,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -128,7 +128,7 @@ class Detail extends StatelessWidget {
         child: Text(
           text,
           style: const TextStyle(
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             fontSize: 12,
             // height: 1.6,
             color: Color(0XFF464698),

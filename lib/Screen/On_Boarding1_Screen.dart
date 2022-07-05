@@ -78,7 +78,7 @@ class PhoneTwoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideInUp(
       from: 20,
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 2),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(bottom: 320, end: 167),
         child: Center(
@@ -100,7 +100,7 @@ class ManWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideInLeft(
       from: 250,
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 2),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(bottom: 295, start: 110),
         child: Center(
@@ -122,7 +122,7 @@ class WomanWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SlideInRight(
       from: 250,
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 2),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(bottom: 295, end: 160),
         child: Center(
@@ -144,7 +144,7 @@ class TextOneWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInLeft(
       from: 20,
-      delay: const Duration(seconds: 4),
+      delay: const Duration(seconds: 3),
       child: const Padding(
         padding: EdgeInsetsDirectional.only(bottom: 340),
         child: Align(
@@ -154,7 +154,7 @@ class TextOneWidget extends StatelessWidget {
             style: TextStyle(
               color: Color(0XFF464698),
               fontSize: 20,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
             ),
           ),
         ),
@@ -169,7 +169,7 @@ class TextTwoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      delay: const Duration(seconds: 5),
+      delay: const Duration(seconds: 4),
       from: 20,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(bottom: 250),
@@ -184,7 +184,7 @@ class TextTwoWidget extends StatelessWidget {
                 color: Color(0XFF292959),
                 fontSize: 16,
                 height: 1.5,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
               ),
             ),
           ),
@@ -200,7 +200,7 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInLeft(
-      delay: const Duration(seconds: 5),
+      delay: const Duration(seconds: 4),
       from: 5,
       child: Align(
         alignment: AlignmentDirectional.bottomStart,
@@ -226,7 +226,7 @@ class SliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      delay: const Duration(seconds: 4),
+      delay: const Duration(seconds: 3),
       from: 20,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(start: 150, bottom: 160),

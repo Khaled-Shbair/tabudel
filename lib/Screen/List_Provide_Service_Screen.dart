@@ -26,7 +26,7 @@ class _ListProvideServiceScreenState extends State<ListProvideServiceScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -71,7 +71,7 @@ class _ListProvideServiceScreenState extends State<ListProvideServiceScreen> {
                       style: TextStyle(
                         height: 0,
                         fontSize: 12,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -79,7 +79,7 @@ class _ListProvideServiceScreenState extends State<ListProvideServiceScreen> {
                       'سباك كهربائي',
                       style: TextStyle(
                         fontSize: 12,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),

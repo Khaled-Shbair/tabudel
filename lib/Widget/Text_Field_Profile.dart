@@ -6,12 +6,12 @@ class TextFieldProfile extends StatelessWidget {
     required this.textEditingController,
     required this.keyboardType,
     required this.nameFiled,
-     this.errorText='',
+    this.errorText = '',
     this.suffixIcon = Icons.create,
     this.sizeSuffixIcon = 0,
   }) : super(key: key);
 
-  final String font = 'HelveticaNeueLTArabic';
+  final String font = 'HelveticaLTArabic';
   final TextInputType keyboardType;
   final String nameFiled;
   final String errorText;
@@ -42,14 +42,6 @@ class TextFieldProfile extends StatelessWidget {
           color: const Color(0XFF464698),
         ),
         hintText: nameFiled,
-       // errorText: errorText,
-
-        // errorStyle: TextStyle(
-        //   fontSize: 12,
-        //   fontFamily: font,
-        //   height: 0,
-        //   color: const Color(0XFFD51818),
-        // ),
         hintStyle: TextStyle(
           fontSize: 10,
           fontFamily: font,

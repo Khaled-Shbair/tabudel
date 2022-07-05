@@ -11,7 +11,7 @@ class Buttons extends StatelessWidget {
     this.color = defaultColor,
     this.colorFont = Colors.white,
   }) : super(key: key);
-  final String font = 'HelveticaNeueLTArabic';
+  final String font = 'HelveticaLTArabic';
   final Function() function;
   final String name;
   final double x;

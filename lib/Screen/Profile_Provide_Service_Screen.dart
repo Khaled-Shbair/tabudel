@@ -25,7 +25,7 @@ class _ProfileProvideServiceScreenState
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -83,7 +83,7 @@ class _ProfileProvideServiceScreenState
               'سجي الأشرم',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
             ),
@@ -104,7 +104,7 @@ class _ProfileProvideServiceScreenState
               '0592638012',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
             ),
@@ -125,7 +125,7 @@ class _ProfileProvideServiceScreenState
               'مهندسة حاسوب',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
             ),
@@ -146,7 +146,7 @@ class _ProfileProvideServiceScreenState
               'غزة',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
             ),
@@ -167,7 +167,7 @@ class _ProfileProvideServiceScreenState
               'النصيرات',
               style: TextStyle(
                 fontSize: 12,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
             ),

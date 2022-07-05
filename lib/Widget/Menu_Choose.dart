@@ -14,7 +14,7 @@ class MenuChoose extends StatelessWidget {
     this.marginEnd = 0,
   }) : super(key: key);
 
-  final String font = 'HelveticaNeueLTArabic';
+  final String font = 'HelveticaLTArabic';
   final String? selectedId;
   final String nameFiled;
   final List list;

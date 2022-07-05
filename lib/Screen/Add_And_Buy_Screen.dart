@@ -48,7 +48,7 @@ class AddAndBuyScreen extends StatelessWidget {
                 unselectedLabelColor: const Color(0XFF464698),
                 // controller: tabController,
                 labelStyle: const TextStyle(
-                  fontFamily: 'HelveticaNeueLTArabic',
+                  fontFamily: 'HelveticaLTArabic',
                   fontSize: 15,
                 ),
                 indicator: BoxDecoration(

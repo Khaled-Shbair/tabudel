@@ -41,7 +41,7 @@ class ReadyToReceiveScreen extends StatelessWidget {
             style: TextStyle(
               height: 1.8,
               fontSize: 18,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
               color: Color(0XFF292959),
             ),
           ),

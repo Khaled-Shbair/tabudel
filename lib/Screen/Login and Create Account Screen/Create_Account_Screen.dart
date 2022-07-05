@@ -56,7 +56,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -127,7 +127,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     text: 'ليس لديك حساب من قبل ؟ ',
                     style: TextStyle(
                       fontSize: 15,
-                      fontFamily: 'HelveticaNeueLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                       color: Color(0XFF292959),
                     ),
                   ),
@@ -137,7 +137,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     style: const TextStyle(
                       fontSize: 15,
                       decoration: TextDecoration.underline,
-                      fontFamily: 'HelveticaNeueLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                       color: Color(0XFF464698),
                     ),
                   ),

@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),

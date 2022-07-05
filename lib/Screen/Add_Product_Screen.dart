@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tabudel/Widget/Buttons.dart';
 
 import '../Widget/Button_AppBar.dart';
+import '../Widget/Buttons.dart';
 import '../Widget/Text_Field_Profile.dart';
 
 class AddProductScreen extends StatefulWidget {
@@ -46,7 +46,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -195,7 +195,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
             maxLength: 4,
             style: TextStyle(
               fontSize: 12,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
               color: const Color(0XFF464698).withAlpha(204),
             ),
             decoration: InputDecoration(
@@ -206,7 +206,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
               hintMaxLines: 4,
               hintStyle: TextStyle(
                 fontSize: 10,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
                 color: const Color(0XFF464698).withAlpha(204),
               ),
               border: OutlineInputBorder(

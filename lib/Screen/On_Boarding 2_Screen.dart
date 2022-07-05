@@ -101,7 +101,7 @@ class TextOneWidget extends StatelessWidget {
             style: TextStyle(
               color: Color(0XFF464698),
               fontSize: 20,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
             ),
           ),
         ),
@@ -130,7 +130,7 @@ class TextTwoWidget extends StatelessWidget {
                 color: Color(0XFF292959),
                 fontSize: 16,
                 height: 1.7,
-                fontFamily: 'HelveticaNeueLTArabic',
+                fontFamily: 'HelveticaLTArabic',
               ),
             ),
           ),

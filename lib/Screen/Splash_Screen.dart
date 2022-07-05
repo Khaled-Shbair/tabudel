@@ -90,8 +90,8 @@ class LogoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-      from: 300,
-      delay: const Duration(seconds: 4),
+      from: 200,
+      delay: const Duration(seconds: 3),
       child: Center(
         child: SvgPicture.asset(
           'images/logo.svg',

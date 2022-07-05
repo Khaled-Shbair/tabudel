@@ -38,7 +38,7 @@ class _ServiceProviderRegistrationScreenState
   String? selectedAreaId;
   bool blur = false;
 
-  String font = 'HelveticaNeueLTArabic';
+  String font = 'HelveticaLTArabic';
   late TextEditingController _phoneEditingController;
   late TextEditingController _nameEditingController;
 
@@ -68,13 +68,13 @@ class _ServiceProviderRegistrationScreenState
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'تسجيل كمزود خدمة',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
-            color: Color(0XFF464698),
+            fontFamily: font,
+            color: const Color(0XFF464698),
           ),
         ),
       ),

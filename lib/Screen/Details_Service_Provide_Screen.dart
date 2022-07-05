@@ -56,7 +56,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                       'سامر الحوت',
                       style: TextStyle(
                         fontSize: 20,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -78,7 +78,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                       'عامل',
                       style: TextStyle(
                         fontSize: 15,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -99,7 +99,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                       'مدينة غزة / دير البلح ',
                       style: TextStyle(
                         fontSize: 15,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -120,7 +120,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                       'عامل كهرباء ',
                       style: TextStyle(
                         fontSize: 15,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -141,7 +141,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                       '0590005695',
                       style: TextStyle(
                         fontSize: 15,
-                        fontFamily: 'HelveticaNeueLTArabic',
+                        fontFamily: 'HelveticaLTArabic',
                         color: Color(0XFF464698),
                       ),
                     ),
@@ -168,7 +168,7 @@ class DetailServiceProvideScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 15,
                           height: 1.5,
-                          fontFamily: 'HelveticaNeueLTArabic',
+                          fontFamily: 'HelveticaLTArabic',
                           color: Color(0XFF464698),
                         ),
                       ),
@@ -187,12 +187,12 @@ class DetailServiceProvideScreen extends StatelessWidget {
                     fontSize: 15,
                     name: 'اتصل',
                     function: () async {
-                      final Uri lanuchUri = Uri(
+                      final Uri launchUri = Uri(
                         scheme: 'tel',
                         path: '0599724037',
                       );
-                      if (await canLaunchUrlString(lanuchUri.toString())) {
-                        await launchUrlString(lanuchUri.toString());
+                      if (await canLaunchUrlString(launchUri.toString())) {
+                        await launchUrlString(launchUri.toString());
                       }
                     },
                   ),

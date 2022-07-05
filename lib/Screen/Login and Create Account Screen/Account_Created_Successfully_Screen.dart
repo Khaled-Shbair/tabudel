@@ -90,7 +90,7 @@ class TextWidget extends StatelessWidget {
               color: Color(0XFF292959),
               fontSize: 18,
               height: 1.8,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
             ),
           ),
         ),

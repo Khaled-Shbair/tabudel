@@ -18,7 +18,7 @@ class NotificationsScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -64,7 +64,7 @@ class NotificationsScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 10,
                       color: Color(0XFF464698),
-                      fontFamily: 'HelveticaNeueLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                     ),
                   ),
                 ),

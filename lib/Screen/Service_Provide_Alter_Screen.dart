@@ -37,7 +37,7 @@ class _ServiceProviderAlterScreenState
   ];
   String? selectedCityId;
   String? selectedAreaId;
-  String font = 'HelveticaNeueLTArabic';
+  String font = 'HelveticaLTArabic';
   late TextEditingController _phoneEditingController;
   late TextEditingController _nameEditingController;
   late TextEditingController _workEditingController;
@@ -76,13 +76,13 @@ class _ServiceProviderAlterScreenState
             Navigator.pop(context);
           },
         ),
-        title: const Text(
+        title: Text(
           'تعديل الملف الشخصي(مزود خدمة)',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
-            color: Color(0XFF464698),
+            fontFamily: font,
+            color: const Color(0XFF464698),
           ),
         ),
       ),

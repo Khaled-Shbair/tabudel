@@ -122,7 +122,7 @@ class MenuPage extends StatelessWidget {
         style: const TextStyle(
           color: Colors.white,
           fontSize: 13,
-          fontFamily: 'HelveticaNeueLTArabic',
+          fontFamily: 'HelveticaLTArabic',
         ),
       ),
       onTap: () => onSelectedItem(item),

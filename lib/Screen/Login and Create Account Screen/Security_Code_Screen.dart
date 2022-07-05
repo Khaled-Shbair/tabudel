@@ -72,7 +72,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -94,7 +94,7 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
               height: 1.8,
               color: Color(0XFF292959),
               fontWeight: FontWeight.bold,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
             ),
           ),
           const SizedBox(height: 30),

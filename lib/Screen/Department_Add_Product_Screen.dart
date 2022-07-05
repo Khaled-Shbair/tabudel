@@ -22,7 +22,7 @@ class _DepartmentAddProductScreenState
         padding: const EdgeInsetsDirectional.only(start: 37, end: 37),
         children: [
           const SizedBox(height: 52),
-          SvgPicture.asset('images/Add product.svg', height: 450),
+          SvgPicture.asset('images/add product.svg', height: 450),
           const SizedBox(height: 45),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

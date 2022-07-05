@@ -30,7 +30,7 @@ class SectionButton extends StatelessWidget {
             style: const TextStyle(
               color: Color(0XFF464698),
               fontSize: 13,
-              fontFamily: 'HelveticaNeueLTArabic',
+              fontFamily: 'HelveticaLTArabic',
               fontWeight: FontWeight.bold,
             ),
           ),

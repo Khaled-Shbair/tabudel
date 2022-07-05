@@ -35,7 +35,7 @@ class _AddInformationScreenState extends State<AddInformationScreen> {
   ];
   String? selectedCityId;
   String? selectedAreaId;
-  String font = 'HelveticaNeueLTArabic';
+  String font = 'HelveticaLTArabic';
   bool blur = false;
   late TextEditingController firstNameEditingController;
   late TextEditingController lastNameEditingController;
@@ -71,13 +71,13 @@ class _AddInformationScreenState extends State<AddInformationScreen> {
             Navigator.pop(context);
           },
         ),
-        title: const Text(
+        title: Text(
           'إضافة معلومات',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
-            color: Color(0XFF464698),
+            fontFamily: font,
+            color: const Color(0XFF464698),
           ),
         ),
       ),

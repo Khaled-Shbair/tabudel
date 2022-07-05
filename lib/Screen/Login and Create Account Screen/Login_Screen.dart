@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            fontFamily: 'HelveticaNeueLTArabic',
+            fontFamily: 'HelveticaLTArabic',
             color: Color(0XFF464698),
           ),
         ),
@@ -126,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: 'ليس لديك حساب من قبل ؟ ',
                     style: TextStyle(
                       fontSize: 15,
-                      fontFamily: 'HelveticaNeueLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                       color: Color(0XFF292959),
                     ),
                   ),
@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: const TextStyle(
                       fontSize: 15,
                       decoration: TextDecoration.underline,
-                      fontFamily: 'HelveticaNeueLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                       color: Color(0XFF464698),
                     ),
                   ),

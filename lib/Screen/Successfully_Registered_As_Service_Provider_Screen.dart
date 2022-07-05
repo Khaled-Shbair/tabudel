@@ -53,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0XFF464698),
                     fontSize: 17,
-                    fontFamily: 'HelveticaNeueLTArabic',
+                    fontFamily: 'HelveticaLTArabic',
                   ),
                 ),
                 const SizedBox(height: 39),
@@ -68,7 +68,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                         SizedBox(height: 15),
                         Text(
@@ -76,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                         SizedBox(height: 15),
                         Text(
@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                       ],
                     ),
@@ -96,7 +96,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                         SizedBox(height: 15),
                         Text(
@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                         SizedBox(height: 15),
                         Text(
@@ -112,7 +112,7 @@ class ProfileScreen extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0XFF464698),
                               fontSize: 15,
-                              fontFamily: 'HelveticaNeueLTArabic'),
+                              fontFamily: 'HelveticaLTArabic'),
                         ),
                       ],
                     ),

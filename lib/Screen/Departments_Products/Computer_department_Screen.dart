@@ -31,7 +31,7 @@ class _ComputerDepartmentScreenState extends State<ComputerDepartmentScreen> {
                     color: Color(0XFF464698),
                     fontSize: 18,
                     height: 1.4,
-                    fontFamily: 'HelveticaNeueLTArabic',
+                    fontFamily: 'HelveticaLTArabic',
                   ),
                 ),
               ],

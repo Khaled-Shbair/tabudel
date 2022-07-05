@@ -118,7 +118,7 @@ class InfoScreen extends StatelessWidget {
                       fontSize: 18,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'HelveticaNeeLTArabic',
+                      fontFamily: 'HelveticaLTArabic',
                     ),
                   ),
                 ),
