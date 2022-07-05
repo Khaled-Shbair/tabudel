@@ -9,26 +9,9 @@ class OnBoarding1Screen extends StatefulWidget {
   State<OnBoarding1Screen> createState() => _OnBoarding1ScreenState();
 }
 
-class _OnBoarding1ScreenState extends State<OnBoarding1Screen>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 2));
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+class _OnBoarding1ScreenState extends State<OnBoarding1Screen> {
   @override
   Widget build(BuildContext context) {
-    _controller.forward();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsetsDirectional.only(
@@ -37,22 +20,28 @@ class _OnBoarding1ScreenState extends State<OnBoarding1Screen>
           alignment: AlignmentDirectional.topCenter,
           children: [
             SvgPicture.asset(
-              'images/logoTitle.svg',
+              'images/on boarding 1/logoTitle.svg',
               height: 40,
             ),
-            const ImageTwoWidget(),
             Padding(
-              padding: const EdgeInsetsDirectional.only(top: 150),
+              padding: const EdgeInsetsDirectional.only(top: 120),
               child: SvgPicture.asset(
-                'images/on boarding 1.svg',
+                'images/on boarding 1/1.svg',
                 fit: BoxFit.fitWidth,
-                height: 320,
+                height: 200,
               ),
             ),
+            const PhoneOneWidget(),
+            const PhoneTwoWidget(),
+            const ManWidget(),
+            const WomanWidget(),
             const TextOneWidget(),
             const TextTwoWidget(),
             const SliderWidget(),
-            const ButtonWidget(),
+            const Padding(
+              padding: EdgeInsetsDirectional.only(bottom: 30),
+              child: ButtonWidget(),
+            ),
           ],
         ),
       ),
@@ -60,20 +49,87 @@ class _OnBoarding1ScreenState extends State<OnBoarding1Screen>
   }
 }
 
-class ImageTwoWidget extends StatelessWidget {
-  const ImageTwoWidget({Key? key}) : super(key: key);
+class PhoneOneWidget extends StatelessWidget {
+  const PhoneOneWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FadeIn(
-      delay: const Duration(seconds: 2),
+    return SlideInDown(
+      delay: const Duration(seconds: 3),
+      from: 20,
       child: Padding(
-        padding: const EdgeInsetsDirectional.only(bottom: 320, start: 15),
+        padding: const EdgeInsetsDirectional.only(bottom: 320, start: 190),
         child: Center(
           child: SvgPicture.asset(
-            'images/on boarding 2.svg',
+            'images/on boarding 1/phone1.svg',
             fit: BoxFit.fitWidth,
-            height: 300,
+            height: 230,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class PhoneTwoWidget extends StatelessWidget {
+  const PhoneTwoWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideInUp(
+      from: 20,
+      delay: const Duration(seconds: 3),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.only(bottom: 320, end: 167),
+        child: Center(
+          child: SvgPicture.asset(
+            'images/on boarding 1/phone2.svg',
+            fit: BoxFit.fitWidth,
+            height: 230,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ManWidget extends StatelessWidget {
+  const ManWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideInLeft(
+      from: 250,
+      delay: const Duration(seconds: 3),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.only(bottom: 295, start: 110),
+        child: Center(
+          child: SvgPicture.asset(
+            'images/on boarding 1/man.svg',
+            width: 100,
+            height: 190,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class WomanWidget extends StatelessWidget {
+  const WomanWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideInRight(
+      from: 250,
+      delay: const Duration(seconds: 3),
+      child: Padding(
+        padding: const EdgeInsetsDirectional.only(bottom: 295, end: 160),
+        child: Center(
+          child: SvgPicture.asset(
+            'images/on boarding 1/woman.svg',
+            width: 100,
+            height: 190,
           ),
         ),
       ),
@@ -88,13 +144,13 @@ class TextOneWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInLeft(
       from: 20,
-      delay: const Duration(seconds: 2),
+      delay: const Duration(seconds: 4),
       child: const Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 220),
+        padding: EdgeInsetsDirectional.only(bottom: 340),
         child: Align(
           alignment: AlignmentDirectional.bottomCenter,
           child: Text(
-            'توصيل سريع',
+            'سياسة إرجاع عادلة',
             style: TextStyle(
               color: Color(0XFF464698),
               fontSize: 20,
@@ -112,21 +168,22 @@ class TextTwoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInUp(
-      delay: const Duration(seconds: 3),
+    return FadeInDown(
+      delay: const Duration(seconds: 5),
+      from: 20,
       child: Padding(
-        padding: const EdgeInsetsDirectional.only(bottom: 150),
+        padding: const EdgeInsetsDirectional.only(bottom: 250),
         child: Align(
           alignment: AlignmentDirectional.bottomCenter,
           child: FadeInUp(
             delay: const Duration(seconds: 4),
             child: const Text(
-              'نتبع سياسة توصيل آمنة تضمن وصول\nالسلعة لباب منزلك خلال 24 ساعة أو أقل',
+              'نضمن إرجاع السلع دون دفع أي رسوم ويمكنك\nإرجاع أي سلعة لم تعد ترغب بها مع دفع تكلفة\nالتوصيل فقط',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color(0XFF292959),
                 fontSize: 16,
-                height: 1.7,
+                height: 1.5,
                 fontFamily: 'HelveticaNeueLTArabic',
               ),
             ),
@@ -143,7 +200,8 @@ class ButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInLeft(
-      delay: const Duration(seconds: 3),
+      delay: const Duration(seconds: 5),
+      from: 5,
       child: Align(
         alignment: AlignmentDirectional.bottomStart,
         child: FloatingActionButton(
@@ -167,18 +225,18 @@ class SliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInLeft(
-      delay: const Duration(seconds: 2),
+    return FadeInDown(
+      delay: const Duration(seconds: 4),
       from: 20,
       child: Padding(
-        padding: const EdgeInsetsDirectional.only(start: 150, bottom: 100),
+        padding: const EdgeInsetsDirectional.only(start: 150, bottom: 160),
         child: Align(
           alignment: AlignmentDirectional.bottomCenter,
           child: Row(
             children: const [
-              CircleAvatar(radius: 6, backgroundColor: Color(0XFF464698)),
-              SizedBox(width: 10),
               CircleAvatar(radius: 6, backgroundColor: Color(0XFF9090C1)),
+              SizedBox(width: 10),
+              CircleAvatar(radius: 6, backgroundColor: Color(0XFF464698)),
             ],
           ),
         ),

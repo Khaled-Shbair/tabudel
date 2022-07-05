@@ -37,14 +37,14 @@ class _OnBoarding2ScreenState extends State<OnBoarding2Screen>
           alignment: AlignmentDirectional.topCenter,
           children: [
             SvgPicture.asset(
-              'images/logoTitle.svg',
+              'images/on boarding 1/logoTitle.svg',
               height: 40,
             ),
             const ImageTwoWidget(),
             Padding(
               padding: const EdgeInsetsDirectional.only(top: 150),
               child: SvgPicture.asset(
-                'images/on boarding 1.svg',
+                'images/on boarding 1/on boarding 1.svg',
                 fit: BoxFit.fitWidth,
                 height: 320,
               ),
@@ -52,7 +52,10 @@ class _OnBoarding2ScreenState extends State<OnBoarding2Screen>
             const TextOneWidget(),
             const TextTwoWidget(),
             const SliderWidget(),
-            const ButtonWidget(),
+            const Padding(
+              padding: EdgeInsetsDirectional.only(bottom: 30),
+              child: ButtonWidget(),
+            ),
           ],
         ),
       ),
@@ -71,7 +74,7 @@ class ImageTwoWidget extends StatelessWidget {
         padding: const EdgeInsetsDirectional.only(bottom: 320, start: 15),
         child: Center(
           child: SvgPicture.asset(
-            'images/on boarding 2.svg',
+            'images/on boarding 1/on boarding 2.svg',
             fit: BoxFit.fitWidth,
             height: 300,
           ),
@@ -167,8 +170,8 @@ class SliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInLeft(
-      delay: const Duration(seconds: 2),
+    return FadeInDown(
+      delay: const Duration(seconds: 3),
       from: 20,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(start: 150, bottom: 100),

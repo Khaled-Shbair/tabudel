@@ -21,7 +21,10 @@ class _AccountCreatedSuccessfullyScreenState
         child: Stack(
           children: const [
             ImageTwoWidget(),
-            ImageOneWidget(),
+            Padding(
+              padding: EdgeInsetsDirectional.only(bottom: 220),
+              child: ImageOneWidget(),
+            ),
             TextWidget(),
             ButtonWidget(),
           ],
@@ -40,7 +43,7 @@ class ImageOneWidget extends StatelessWidget {
       delay: const Duration(seconds: 2),
       child: Center(
         child: SvgPicture.asset(
-          'images/ImageOne.svg',
+          'images/Login and Create Account/ImageOne.svg',
           fit: BoxFit.fitHeight,
           width: 380,
         ),
@@ -57,9 +60,9 @@ class ImageTwoWidget extends StatelessWidget {
     return FadeInDown(
       delay: const Duration(seconds: 3),
       child: Padding(
-        padding: const EdgeInsetsDirectional.only(top: 115, start: 15, end: 20),
+        padding: const EdgeInsetsDirectional.only(top: 120, start: 20, end: 15),
         child: SvgPicture.asset(
-          'images/ImageTwo.svg',
+          'images/Login and Create Account/ImageTwo.svg',
           fit: BoxFit.fitWidth,
           height: 250,
           alignment: AlignmentDirectional.bottomCenter,

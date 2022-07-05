@@ -2,10 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Widget/Buttons.dart';
-import '../Widget/Menu_Choose.dart';
-import '../Widget/Text_Field_Profile.dart';
-import '../models/Code Country.dart';
+import '../../Widget/Buttons.dart';
+import '../../Widget/Menu_Choose.dart';
+import '../../Widget/Text_Field_Profile.dart';
+import '../../models/Code Country.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -64,7 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: const EdgeInsetsDirectional.only(top: 52, start: 37, end: 37),
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          SvgPicture.asset('images/Log in.svg'),
+          SvgPicture.asset(
+            'images/Login and Create Account/Log in.svg',
+            height: 270,
+          ),
           const SizedBox(height: 67),
           Expanded(
             child: Row(
@@ -90,7 +93,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     paddingEnd: 10,
                     paddingStart: 10,
-                    marginEnd: 30,
                     selectedId: selectedCodeCountry,
                     list: codeCountry,
                     nameFiled: codeCountry[0].name,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'Widget/Button_AppBar.dart';
-import 'Widget/Buttons.dart';
+import '../../Widget/Button_AppBar.dart';
+import '../../Widget/Buttons.dart';
 
 class SecurityCodeScreen extends StatefulWidget {
   const SecurityCodeScreen({Key? key}) : super(key: key);
@@ -81,7 +81,10 @@ class _SecurityCodeScreenState extends State<SecurityCodeScreen> {
         padding: const EdgeInsetsDirectional.only(top: 52, start: 37, end: 37),
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          SvgPicture.asset('images/Security code.svg'),
+          SvgPicture.asset(
+            'images/Login and Create Account/Security code.svg',
+            height: 250,
+          ),
           const SizedBox(height: 30),
           const Text(
             ' لقد أرسلنا لك رسالة نصية قصيرة\n تحتوي على الرمز سيتم تفعيلها تلقائيا',

@@ -89,7 +89,8 @@ class _AddInformationScreenState extends State<AddInformationScreen> {
         ),
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          SvgPicture.asset('images/Add Information.svg'),
+          SvgPicture.asset(
+              'images/Login and Create Account/Add Information.svg'),
           const SizedBox(height: 45),
           TextFieldProfile(
             keyboardType: TextInputType.text,
