@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
+import '../../Shared_Preference.dart';
 import '../../Widget/Button_AppBar.dart';
 
-class LogoutScreen extends StatelessWidget {
+class LogoutScreen extends StatefulWidget {
   const LogoutScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LogoutScreen> createState() => _LogoutScreenState();
+}
+
+class _LogoutScreenState extends State<LogoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +105,7 @@ class LogoutScreen extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => logout(),
                 child: const Text(
                   'تسجيل خروج',
                   style: TextStyle(
@@ -125,5 +131,12 @@ class LogoutScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> logout() async {
+    bool cleared = await SharedPreferencesController().cleared();
+    if (cleared) {
+      Navigator.pushReplacementNamed(context, '/LoginScreen');
+    }
   }
 }

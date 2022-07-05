@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
+import '../../Shared_Preference.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -19,9 +21,12 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    String route = SharedPreferencesController().login
+        ? '/MenuScreen'
+        : '/OnBoarding1Screen';
     Future.delayed(
       const Duration(seconds: 6),
-      () => Navigator.pushReplacementNamed(context, '/OnBoarding1Screen'),
+      () => Navigator.pushReplacementNamed(context, route),
     );
   }
 

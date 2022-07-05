@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../Shared_Preference.dart';
 import '../../Widget/Buttons.dart';
 import '../../Widget/Menu_Choose.dart';
 import '../../Widget/Text_Field_Profile.dart';
@@ -176,6 +177,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _login() async {
+    await SharedPreferencesController()
+        .save(phone: _phoneEditingController.text);
     Navigator.pushReplacementNamed(context, '/MenuScreen');
   }
 }

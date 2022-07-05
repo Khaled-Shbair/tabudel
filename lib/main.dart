@@ -31,8 +31,11 @@ import 'Screen/Provide_Service_Screen/Service_Provide_Registration_Screen.dart';
 import 'Screen/Splash_Screen/Splash_Screen.dart';
 import 'Screen/Wait_for_pickup_Screen.dart';
 import 'Screen/Login and Create Account Screen/Security_Code_Screen.dart';
+import 'Shared_Preference.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferencesController().getInstance();
   runApp(const MyApp());
 }
 

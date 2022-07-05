@@ -33,7 +33,7 @@ class MenuChoose extends StatelessWidget {
     return Container(
       margin: EdgeInsetsDirectional.only(end: marginEnd),
       padding: EdgeInsetsDirectional.only(start: paddingStart, end: paddingEnd),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
           color: const Color(0XFFF1F1F9),
           borderRadius: BorderRadius.circular(4)),
