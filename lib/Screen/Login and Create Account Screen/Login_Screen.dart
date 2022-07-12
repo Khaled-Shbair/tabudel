@@ -177,8 +177,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _login() async {
-    await SharedPreferencesController()
-        .save(phone: _phoneEditingController.text);
-    Navigator.pushReplacementNamed(context, '/MenuScreen');
+    // await SharedPreferencesController()
+    //     .save(phone: _phoneEditingController.text,);
+    // Navigator.pushReplacementNamed(context, '/MenuScreen');
   }
 }

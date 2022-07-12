@@ -134,7 +134,7 @@ class _LogoutScreenState extends State<LogoutScreen> {
   }
 
   Future<void> logout() async {
-    bool cleared = await SharedPreferencesController().cleared();
+    bool cleared = await SharedPreferencesController().clear();
     if (cleared) {
       Navigator.pushReplacementNamed(context, '/LoginScreen');
     }

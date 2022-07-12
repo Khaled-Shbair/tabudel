@@ -1,6 +1,8 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-enum PrefKey { login, phone }
+import 'Database/Models/Users.dart';
+
+enum PrefKey { login, phone, id }
 
 class SharedPreferencesController {
   static final SharedPreferencesController _instance =
@@ -17,18 +19,20 @@ class SharedPreferencesController {
     _sharedPreferences = await SharedPreferences.getInstance();
   }
 
-  Future<void> save({required String phone}) async {
+  Future<void> save(User user) async {
+    await _sharedPreferences.setString(PrefKey.phone.toString(), user.phone);
+    await _sharedPreferences.setInt(PrefKey.id.toString(), user.id);
     await _sharedPreferences.setBool(PrefKey.login.toString(), true);
-    await _sharedPreferences.setString(PrefKey.phone.toString(), phone);
   }
 
   bool get login =>
       _sharedPreferences.getBool(PrefKey.login.toString()) ?? false;
 
-  String get phone =>
-      _sharedPreferences.getString(PrefKey.phone.toString()) ?? '';
-
-  Future<bool> cleared() async {
+  Future<bool> clear() async {
     return await _sharedPreferences.clear();
+  }
+
+  T? getKey<T>({required String key}) {
+    return _sharedPreferences.get(key) as T;
   }
 }

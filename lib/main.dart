@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: const [Locale('ar')],
       locale: const Locale('ar'),
       //initialRoute: '/SplashScreen',
-      initialRoute: '/CreateAccountScreen',
+      initialRoute: '/',
       routes: {
         //////////////////////////////////////////////////////////////////
         '/AddAndBuyScreen': (context) => const AddAndBuyScreen(),
